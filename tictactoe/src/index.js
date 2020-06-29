@@ -127,7 +127,7 @@ import './index.css';
       }
     }
 
-    if(rowComplete[0] == rowComplete[1] == rowComplete[2]) {
+    if(rowComplete[0] === rowComplete[1] === rowComplete[2]) {
       return 0;
     }
 
