@@ -21,6 +21,12 @@ function Square(props) {
 
     handleClick(i) {
       const squares = this.state.squares.slice();
+
+      //Checking if game is complete or Square is filled, then no need to do anything else.
+      if(calculateWinner(squares) || squares[i]) {
+        return;
+      }
+
       squares[i] = this.state.xIsNext ? 'X' : 'O';
       this.setState({
         squares: squares,
@@ -38,7 +44,13 @@ function Square(props) {
     }
   
     render() {
-      const status = (this.state.xIsNext ? 'X' : 'O') + "'s turn";
+      const winner = calculateWinner(this.state.squares);
+      let status;
+      if(winner) {
+        status = 'Winner: ' + winner;
+      } else {
+        status = (this.state.xIsNext ? 'X' : 'O') + "'s turn";
+      }      
   
       return (
         <div>
@@ -79,6 +91,29 @@ function Square(props) {
     }
   }
   
+  //Helper function for Declaring a winnner
+  function calculateWinner(squares) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+
+      //Here, checking if it is null or matches loop items' conditions for tictactoe
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
+      }
+    }
+    return null;
+  }
+
   // ========================================
   
   ReactDOM.render(
