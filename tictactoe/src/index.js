@@ -46,8 +46,11 @@ function Square(props) {
     render() {
       const winner = calculateWinner(this.state.squares);
       let status;
-      if(winner) {
+      if(winner && winner !==0) {
         status = 'Winner: ' + winner;
+      }
+      else if(winner === 0) {
+        status = "Game Draw";        
       } else {
         status = (this.state.xIsNext ? 'X' : 'O') + "'s turn";
       }      
@@ -109,8 +112,22 @@ function Square(props) {
       //Here, checking if it is null or matches loop items' conditions for tictactoe
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
+      }      
+
+      //Checking for first 3 items of lines array (i.e. 3 rows of board) to see if filled => Draw      
+      let rowComplete = Array(3).fill(null);
+      if(i <= 2) {        
+        if(squares[a] && squares[b] && squares[c]) {
+          rowComplete[i] = true;
+        }
+        if(rowComplete[0] === rowComplete[1] === rowComplete[2]) {
+          return 0;
+        }
       }
     }
+
+    
+
     return null;
   }
 
