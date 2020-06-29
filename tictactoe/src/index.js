@@ -106,6 +106,9 @@ import './index.css';
       [0, 4, 8],
       [2, 4, 6],
     ];
+
+    let rowComplete = [3];
+    
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
 
@@ -115,15 +118,17 @@ import './index.css';
       }      
 
       //Checking for first 3 items of lines array (i.e. 3 rows of board) to see if filled => Draw      
-      let rowComplete = Array(3).fill(null);
-      if(i <= 2) {        
+      
+      if(i <= 2 && rowComplete[i] !== true) {
         if(squares[a] && squares[b] && squares[c]) {
           rowComplete[i] = true;
         }
-        if(rowComplete[0] === rowComplete[1] === rowComplete[2]) {
-          return 0;
-        }
+        
       }
+    }
+
+    if(rowComplete[0] == rowComplete[1] == rowComplete[2]) {
+      return 0;
     }
 
     return null;
