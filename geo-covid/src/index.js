@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './covid-icon.png';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
@@ -53,6 +54,7 @@ class App extends React.Component {
             <Container className="p-3">
                 <Jumbotron>
                     <h1>Geo Covid</h1>
+                    <img src={logo} alt="covid icon" />
                 </Jumbotron>
             </Container>
         );
