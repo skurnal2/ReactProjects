@@ -11,11 +11,18 @@ import Button from 'react-bootstrap/Button';
 class ReportsMap extends React.Component {
 
     state = {
-        sideHeading: "Side Heading Title"
+        sideHeading: "Side Heading Title", 
+        coordinates: {long:-113.4183021, lat:53.5836081}        
     }
 
     buttonSelected = (report) => {
-        this.setState({sideHeading: report.location})
+        this.setState({
+            sideHeading: report.location,
+            coordinates: {
+                long: report.polygon.coordinates[0][0],
+                lat: report.polygon.coordinates[0][1]
+            }
+        })
     }
 
     render() {
@@ -51,7 +58,7 @@ class ReportsMap extends React.Component {
                     </Col>
                     <Col>
                         <h3>{this.state.sideHeading}</h3>
-                        <MapContainer />
+                        <MapContainer coordinates={this.state.coordinates} />
                     </Col>
                 </Row></Container>
         )

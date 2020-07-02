@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
 //#region Bootstrap Imports
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Jumbotron from 'react-bootstrap/Jumbotron';
@@ -8,11 +5,14 @@ import Container from 'react-bootstrap/Container';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 //#endregion
-
+//#region Other Imports
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Reports from './components/reports';
 import ReportsMap from './components/reports-map';
 import './index.css';
 import logo from './covid-icon.png';
+//#endregion
 
 class App extends React.Component {
 
