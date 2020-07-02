@@ -1,9 +1,10 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg class="svg-item"  fill="#000" version="1.0" xmlns="http://www.w3.org/2000/svg" width="3840.000000pt" height="3606.000000pt" viewBox="0 0 3840.000000 3606.000000" preserveAspectRatio="xMidYMid meet">
+import React from 'react';
+
+const Sunshine = (props) => (
+    <svg class="svg-item" fill={props.fill} className={props.cssclass} version="1.0" xmlns="http://www.w3.org/2000/svg" width="3840.000000pt" height="3606.000000pt" viewBox="0 0 3840.000000 3606.000000" preserveAspectRatio="xMidYMid meet">
        
-    <g transform="translate(0.000000,3606.000000) scale(0.100000,-0.100000)" stroke="none">
-        <path d="M0 34617 l0 -1443 8417 -7084 c4629 -3897 8422 -7089 8429 -7095 9
+        <g transform="translate(0.000000,3606.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path d="M0 34617 l0 -1443 8417 -7084 c4629 -3897 8422 -7089 8429 -7095 9
 -8 2 -30 -31 -97 -41 -85 -110 -253 -135 -331 -6 -21 -15 -37 -20 -35 -4 2
 -217 102 -473 223 -261 123 -461 223 -454 227 6 4 9 10 6 13 -4 3 -3505 1657
 -7780 3676 -4276 2019 -7816 3690 -7866 3714 l-93 44 0 -2248 0 -2247 2917
@@ -93,5 +94,8 @@ l6295 3 -4109 5155 c-3181 3991 -7777 9770 -8226 10342 l-53 67 83 42 c105 53
 -228 253 -443 487 -477 520 -35 33 -903 980 -1930 2105 -1027 1125 -2034 2227
 -2238 2450 -204 223 -1293 1415 -2420 2648 l-2049 2242 -1324 0 -1323 0 0
 -1443z" />
-    </g>
-</svg>
+        </g>
+    </svg>
+);
+
+export default Sunshine;

@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import back from './images/sunshine-draft.svg';
+import Sunshine from './sunshine';
 import smiley from './images/smiley.png';
 
 //#endregion
@@ -10,8 +10,8 @@ import smiley from './images/smiley.png';
 class App extends React.Component {
     render() {
         return (
-            <div id="meme-holder">
-                <img src={back} className="sunshine" alt="Sunshine SVG" />
+            <div id="meme-holder">               
+                <Sunshine fill="#f4f4f4" cssclass="sunshine" />
                 <img src={smiley} className="smiley" alt="Sunshine SVG" />
             </div>
         );
