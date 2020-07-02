@@ -10,6 +10,7 @@ import Tab from 'react-bootstrap/Tab';
 //#endregion
 
 import Reports from './components/reports';
+import ReportsMap from './components/reports-map';
 import './index.css';
 import logo from './covid-icon.png';
 
@@ -41,7 +42,7 @@ class App extends React.Component {
                         <Reports reports={this.state.reports} />
                     </Tab>
                     <Tab eventKey="neighbourhood-map" title="Neighbourhood Map">
-                        
+                      <ReportsMap reports={this.state.reports} />
                     </Tab>
                 </Tabs>
             </Container>
