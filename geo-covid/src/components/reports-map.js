@@ -4,49 +4,58 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MapContainer from './google-map-component';
-import {Button as Btn} from 'react-bootstrap/Button';
 
 import './slide.scss';
 import Button from 'react-bootstrap/Button';
 
-const ReportsMap = ({ reports }) => {
-    return (
-        <Container>
-            <Row>
-                <Col>
-                    <Card>
-                        {reports.map((report) => (
-                            <div>
+class ReportsMap extends React.Component {
+
+    state = {
+        sideHeading: "Side Heading Title"
+    }
+
+    buttonSelected = (report) => {
+        this.setState({sideHeading: 'Hello'})
+    }
+
+    render() {
+        return (
+            <Container>
+                <Row>
+                    <Col>
+                        <Card>
+                            {this.props.reports.map((report) => (
                                 <Card>
                                     <Card.Header>
                                         {report.location}
                                     </Card.Header>
                                     <Card.Body>
-                                    <Container>
-                                <Row>
-                                    <Col>
-                                        Total: {report.total_cases} <br />
+                                        <Container>
+                                            <Row>
+                                                <Col>
+                                                    Total: {report.total_cases} <br />
                                         Active: {report.active_cases} <br />
                                         Recovered: {report.recovered_cases} <br />
                                         Deaths: {report.deaths}
-                                        </Col>
-                                        <Col>
-                                            <Button>Select</Button>
-                                        </Col>
-                                        </Row></Container>
+                                                </Col>
+                                                <Col>
+                                                    <Button onClick={this.buttonSelected(report)}>Select</Button>
+                                                </Col>
+                                            </Row></Container>
 
                                     </Card.Body>
 
                                 </Card>
-                            </div>
-                        ))}
-                    </Card>
-                </Col>
-                <Col>
-
-                </Col>
-            </Row></Container>
-    )
+                            ))}
+                        </Card>
+                    </Col>
+                    <Col>
+                        <h3>{this.state.sideHeading}</h3>
+                        <MapContainer />
+                    </Col>
+                </Row></Container>
+        )
+    }
 };
 
 export default ReportsMap;

@@ -33,8 +33,8 @@ class App extends React.Component {
         return (
             <Container className="p-3">
                 <Jumbotron>
-                    <h1>Geo Covid - Alberta</h1>
-                    <img src={logo} alt="covid icon" />
+                    <h1>Geo C<img src={logo} alt="covid icon" />vid - Alberta</h1>
+                   
                 </Jumbotron>
                 
                 <Tabs defaultActiveKey="neighbourhood-list" id="menu-manager">
