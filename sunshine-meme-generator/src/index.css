@@ -3,8 +3,11 @@ body {
 }
 
 img.sunshine {
-    height: 150%;
-    width: 150%;
+    position: absolute;
+    height: 225%;
+    width: 225%;
+    left: -60%;
+    top: -60%;
     animation: rotate infinite 20s linear;
 }
 
