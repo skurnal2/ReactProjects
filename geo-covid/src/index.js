@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Reports from './components/reports';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './covid-icon.png';
 
+//#region Bootstrap Imports
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+//#endregion
 
 class App extends React.Component {
 
@@ -30,7 +34,15 @@ class App extends React.Component {
                     <h1>Geo Covid - Alberta</h1>
                     <img src={logo} alt="covid icon" />
                 </Jumbotron>
-                <Reports reports={this.state.reports} />
+                
+                <Tabs defaultActiveKey="by-neighbourhood" id="menu-manager">
+                    <Tab eventKey="by-neighbourhood" title="By Neighbourhood">
+                        <Reports reports={this.state.reports} />
+                    </Tab>
+                    <Tab eventKey="not-by-neighbourhood" title="Not By Neighbourhood">
+                        
+                    </Tab>
+                </Tabs>
             </Container>
         );
     }
