@@ -1,5 +1,11 @@
 body {
    overflow: hidden;
+   background-color: yellow;
+}
+
+#meme-holder {
+  text-align: center;
+  
 }
 
 img.sunshine {
@@ -8,16 +14,20 @@ img.sunshine {
     width: 225%;
     left: -60%;
     top: -60%;
-    animation: rotate infinite 20s linear;
+    animation: rotate infinite 5s linear;
   
 }
 
 img.smiley {
   position: relative;
   display: inline-block;
-  height: 50vh;
-  width: 50vh;
-  
+  height: 45vh;
+  width: 45vh;
+  margin-top: 25vh;
+  margin-left: 3vw;
+  -webkit-filter: 0px 8px 500px rgba(255,255,255,0.53);
+  filter:drop-shadow(0px 8px 500px rgba(255,255,255,0.53)); 
+
 }
 
 

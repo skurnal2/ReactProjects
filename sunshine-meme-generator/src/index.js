@@ -10,7 +10,7 @@ import smiley from './images/smiley.png';
 class App extends React.Component {
     render() {
         return (
-            <div>
+            <div id="meme-holder">
                 <img src={back} className="sunshine" alt="Sunshine SVG" />
                 <img src={smiley} className="smiley" alt="Sunshine SVG" />
             </div>
