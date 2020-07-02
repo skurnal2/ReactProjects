@@ -37,7 +37,7 @@ class App extends React.Component {
                    
                 </Jumbotron>
                 
-                <Tabs defaultActiveKey="neighbourhood-list" id="menu-manager">
+                <Tabs defaultActiveKey="neighbourhood-map" id="menu-manager">
                     <Tab eventKey="neighbourhood-list" title="Neighbourhood List">
                         <Reports reports={this.state.reports} />
                     </Tab>

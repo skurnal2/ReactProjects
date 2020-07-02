@@ -4,8 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MapContainer from './google-map-component';
-
-import './slide.scss';
 import Button from 'react-bootstrap/Button';
 
 class ReportsMap extends React.Component {
