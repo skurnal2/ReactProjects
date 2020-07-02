@@ -2,10 +2,7 @@
 
 A basic react.js app based on ReactJs tutorial on the official website with minor design tweaks.
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[SEE DEMO](https://skurnal2.github.io/30ProjectsIn60Days/)
 
 #### Screenshot
 ![Screenshot](https://i.ibb.co/wLt2wDM/tictac.jpg)
