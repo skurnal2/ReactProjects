@@ -10,7 +10,7 @@ import './map-page.css';
 class ReportsMap extends React.Component {
 
     state = {
-        sideHeading: "Side Heading Title", 
+        sideHeading: "", 
         coordinates: {long:-113.4183021, lat:53.5836081}        
     }
 
