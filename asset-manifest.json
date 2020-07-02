@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/30ProjectsIn60Days/static/css/main.c5aa5a8f.chunk.css",
-    "main.js": "/30ProjectsIn60Days/static/js/main.e3ef6ca4.chunk.js",
-    "main.js.map": "/30ProjectsIn60Days/static/js/main.e3ef6ca4.chunk.js.map",
-    "runtime-main.js": "/30ProjectsIn60Days/static/js/runtime-main.5406914b.js",
-    "runtime-main.js.map": "/30ProjectsIn60Days/static/js/runtime-main.5406914b.js.map",
-    "static/js/2.094fd168.chunk.js": "/30ProjectsIn60Days/static/js/2.094fd168.chunk.js",
-    "static/js/2.094fd168.chunk.js.map": "/30ProjectsIn60Days/static/js/2.094fd168.chunk.js.map",
-    "index.html": "/30ProjectsIn60Days/index.html",
-    "precache-manifest.6f6ebdc2c65a75edae437a0d691335e9.js": "/30ProjectsIn60Days/precache-manifest.6f6ebdc2c65a75edae437a0d691335e9.js",
-    "service-worker.js": "/30ProjectsIn60Days/service-worker.js",
-    "static/css/main.c5aa5a8f.chunk.css.map": "/30ProjectsIn60Days/static/css/main.c5aa5a8f.chunk.css.map",
-    "static/js/2.094fd168.chunk.js.LICENSE.txt": "/30ProjectsIn60Days/static/js/2.094fd168.chunk.js.LICENSE.txt"
+    "main.css": "/geo-covid/static/css/main.de00b193.chunk.css",
+    "main.js": "/geo-covid/static/js/main.c115f56e.chunk.js",
+    "main.js.map": "/geo-covid/static/js/main.c115f56e.chunk.js.map",
+    "runtime-main.js": "/geo-covid/static/js/runtime-main.278de6e4.js",
+    "runtime-main.js.map": "/geo-covid/static/js/runtime-main.278de6e4.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/geo-covid/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.58d5a24d.chunk.js": "/geo-covid/static/js/2.58d5a24d.chunk.js",
+    "static/js/2.58d5a24d.chunk.js.map": "/geo-covid/static/js/2.58d5a24d.chunk.js.map",
+    "index.html": "/geo-covid/index.html",
+    "precache-manifest.4c3cd7fe6f7e5cc6d852e7b65826d6e2.js": "/geo-covid/precache-manifest.4c3cd7fe6f7e5cc6d852e7b65826d6e2.js",
+    "service-worker.js": "/geo-covid/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/geo-covid/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.de00b193.chunk.css.map": "/geo-covid/static/css/main.de00b193.chunk.css.map",
+    "static/js/2.58d5a24d.chunk.js.LICENSE.txt": "/geo-covid/static/js/2.58d5a24d.chunk.js.LICENSE.txt",
+    "static/media/covid-icon.png": "/geo-covid/static/media/covid-icon.6096fdd4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5406914b.js",
-    "static/js/2.094fd168.chunk.js",
-    "static/css/main.c5aa5a8f.chunk.css",
-    "static/js/main.e3ef6ca4.chunk.js"
+    "static/js/runtime-main.278de6e4.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.58d5a24d.chunk.js",
+    "static/css/main.de00b193.chunk.css",
+    "static/js/main.c115f56e.chunk.js"
   ]
 }
