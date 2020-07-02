@@ -3,10 +3,13 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+import './slide.scss';
+
 const Reports = ({ reports }) => {
     return (
         <Accordion>
-            {reports.map((report, index) => (
+            {reports.map((report, index) => (              
+                <div>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey={index}>
@@ -22,6 +25,7 @@ const Reports = ({ reports }) => {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+                </div>
             ))}
         </Accordion>
     )

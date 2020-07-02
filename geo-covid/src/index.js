@@ -1,8 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reports from './components/reports';
-import './index.css';
-import logo from './covid-icon.png';
 
 //#region Bootstrap Imports
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +8,10 @@ import Container from 'react-bootstrap/Container';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 //#endregion
+
+import Reports from './components/reports';
+import './index.css';
+import logo from './covid-icon.png';
 
 class App extends React.Component {
 
@@ -35,11 +36,11 @@ class App extends React.Component {
                     <img src={logo} alt="covid icon" />
                 </Jumbotron>
                 
-                <Tabs defaultActiveKey="by-neighbourhood" id="menu-manager">
-                    <Tab eventKey="by-neighbourhood" title="By Neighbourhood">
+                <Tabs defaultActiveKey="neighbourhood-list" id="menu-manager">
+                    <Tab eventKey="neighbourhood-list" title="Neighbourhood List">
                         <Reports reports={this.state.reports} />
                     </Tab>
-                    <Tab eventKey="not-by-neighbourhood" title="Not By Neighbourhood">
+                    <Tab eventKey="neighbourhood-map" title="Neighbourhood Map">
                         
                     </Tab>
                 </Tabs>
