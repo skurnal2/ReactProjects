@@ -15,7 +15,7 @@ class ReportsMap extends React.Component {
     }
 
     buttonSelected = (report) => {
-        this.setState({sideHeading: 'Hello'})
+        this.setState({sideHeading: report.location})
     }
 
     render() {
@@ -39,7 +39,7 @@ class ReportsMap extends React.Component {
                                         Deaths: {report.deaths}
                                                 </Col>
                                                 <Col>
-                                                    <Button onClick={this.buttonSelected(report)}>Select</Button>
+                                                    <Button onClick={() => this.buttonSelected(report)}>Select</Button>
                                                 </Col>
                                             </Row></Container>
 
