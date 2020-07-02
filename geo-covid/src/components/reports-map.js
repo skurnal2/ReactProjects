@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MapContainer from './google-map-component';
 import Button from 'react-bootstrap/Button';
+import './map-page.css';
 
 class ReportsMap extends React.Component {
 
@@ -28,7 +29,7 @@ class ReportsMap extends React.Component {
             <Container>
                 <Row>
                     <Col>
-                        <Card>
+                        <Card className="scroll">
                             {this.props.reports.map((report) => (
                                 <Card>
                                     <Card.Header>
