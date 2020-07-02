@@ -3,39 +3,49 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import MapContainer from './google-map-component';
+import {Button as Btn} from 'react-bootstrap/Button';
 
 import './slide.scss';
+import Button from 'react-bootstrap/Button';
 
 const ReportsMap = ({ reports }) => {
     return (
-        <Card>
-            {reports.map((report) => (
-                <div>
+        <Container>
+            <Row>
+                <Col>
                     <Card>
-                        <Card.Header>
-                            {report.location}
-                        </Card.Header>
-
-                        <Card.Body>
-                            <Container>
+                        {reports.map((report) => (
+                            <div>
+                                <Card>
+                                    <Card.Header>
+                                        {report.location}
+                                    </Card.Header>
+                                    <Card.Body>
+                                    <Container>
                                 <Row>
                                     <Col>
-                                        Total Cases: {report.total_cases} <br />
-                                        Active Cases: {report.active_cases} <br />
-                                        Recovered Cases: {report.recovered_cases} <br />
+                                        Total: {report.total_cases} <br />
+                                        Active: {report.active_cases} <br />
+                                        Recovered: {report.recovered_cases} <br />
                                         Deaths: {report.deaths}
-                                    </Col>
-                                    <Col>
-                                        dsa
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Card.Body>
+                                        </Col>
+                                        <Col>
+                                            <Button>Select</Button>
+                                        </Col>
+                                        </Row></Container>
 
+                                    </Card.Body>
+
+                                </Card>
+                            </div>
+                        ))}
                     </Card>
-                </div>
-            ))}
-        </Card>
+                </Col>
+                <Col>
+
+                </Col>
+            </Row></Container>
     )
 };
 
