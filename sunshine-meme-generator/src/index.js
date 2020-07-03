@@ -9,7 +9,7 @@ import smiley from './images/smiley.png';
 class App extends React.Component {
 
     state = {
-        chosenColor: "yellow",
+        chosenColor: "blue",
     }    
 
     changeColor(value) {
@@ -20,9 +20,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>            
-            {/* <PropPanel val={this.state.chosenColor} rerenderColor={this.rerenderColor} /> */}
-            <input type="text" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} />
+            <div>                        
+            <input type="text" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} />
             <div id="meme-holder">               
                 <Sunshine fill={this.state.chosenColor} cssclass="sunshine" />
                 <img src={smiley} className="smiley" alt="Sunshine SVG" />
