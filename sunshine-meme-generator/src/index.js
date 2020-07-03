@@ -10,6 +10,7 @@ class App extends React.Component {
 
     state = {
         chosenColor: "blue",
+        chosenColor2: "#0300b3"
     }    
 
     changeColor(value) {
@@ -18,10 +19,17 @@ class App extends React.Component {
         });
     }
 
+    changeColor2(value) {
+        this.setState({
+            chosenColor2: value
+        });
+    }
+
     render() {
         return (
-            <div>                        
-            <input type="text" placeholder="Color #1" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} />
+            <div id="content-holder" style={{backgroundColor: this.state.chosenColor2}}>                        
+            <input type="text" placeholder="Color #1" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} /><br/><br/>
+            <input type="text" placeholder="Color #2" className="box-shadow-3d" defaultValue={this.state.chosenColor2} onChange={e => this.changeColor2(e.target.value)} />
             <div id="meme-holder">               
                 <Sunshine fill={this.state.chosenColor} cssclass="sunshine" />
                 <img src={smiley} className="smiley" alt="Sunshine SVG" />

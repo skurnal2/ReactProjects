@@ -1,6 +1,13 @@
-body {
-   overflow: hidden;
-   background-color: rgb(0, 0, 179);
+body {   
+   overflow: hidden;  
+   margin: 0;
+}
+
+#content-holder {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  padding: 8px;  
 }
 
 #meme-holder {
@@ -14,7 +21,8 @@ body {
     width: 225%;
     left: -60%;
     top: -60%;
-    animation: rotate infinite 5s linear;
+    animation: rotate infinite 6s linear;
+    
     
 }
 
@@ -79,8 +87,8 @@ input[type="text"] {
 h3{
   position: absolute;
   font-size: .75rem;
-  bottom: 0rem;
-  right: 1rem;
+  bottom: 1rem;
+  right: 2rem;
   cursor: pointer;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: rgb(255, 255, 255);
