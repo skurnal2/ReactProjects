@@ -49,7 +49,7 @@ img.smiley {
       }
 }
 
-input[type="text"] {
+input[type="text"], input[type="file"] {
   position: absolute;
   z-index: 500;
 }
@@ -72,6 +72,12 @@ input[type="text"] {
               9px 9px 0px #000;
 
   transition: .5s;
+}
+
+input[type="file"] {
+  width: 12rem;
+  background-color: white;
+  padding: .5rem 0 0 .5rem;
 }
 
 .box-shadow-3d:hover {

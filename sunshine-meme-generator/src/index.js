@@ -3,14 +3,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Sunshine from './components/sunshine';
-import smiley from './images/smiley.png';
+import sourceImg from './images/smiley.png';
 //#endregion
 
 class App extends React.Component {
 
     state = {
         chosenColor: "blue",
-        chosenColor2: "#0300b3"
+        chosenColor2: "#0300b3",
+        src: sourceImg
     }    
 
     changeColor(value) {
@@ -25,14 +26,22 @@ class App extends React.Component {
         });
     }
 
+    changeImage = (event) => {
+              
+        this.setState({
+            src: URL.createObjectURL(event.target.files[0])
+        });
+    }
+
     render() {
         return (
             <div id="content-holder" style={{backgroundColor: this.state.chosenColor2}}>                        
             <input type="text" placeholder="Color #1" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} /><br/><br/>
-            <input type="text" placeholder="Color #2" className="box-shadow-3d" defaultValue={this.state.chosenColor2} onChange={e => this.changeColor2(e.target.value)} />
+            <input type="text" placeholder="Color #2" className="box-shadow-3d" defaultValue={this.state.chosenColor2} onChange={e => this.changeColor2(e.target.value)} /><br/><br/><br/>
+            <input type='file' className="box-shadow-3d" onChange={this.changeImage} />
             <div id="meme-holder">               
                 <Sunshine fill={this.state.chosenColor} cssclass="sunshine" />
-                <img src={smiley} className="smiley" alt="Sunshine SVG" />
+                <img src={this.state.src} className="smiley" alt="Center Image" />
             </div>
             
             <h3>
