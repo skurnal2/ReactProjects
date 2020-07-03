@@ -75,3 +75,34 @@ input[type="text"] {
   outline: none;
   transform: translate(9px, 9px);
 }
+
+h3{
+  position: absolute;
+  font-size: .75rem;
+  bottom: 0rem;
+  right: 1rem;
+  cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgb(255, 255, 255);
+  padding: .5rem;
+  opacity: .2;
+  /* border-radius: 5rem; */
+  transition: .5s;
+}
+
+h3:hover {
+
+  opacity: 1;
+  border: 1px solid black;
+
+  box-shadow: 1px 1px 0px #000,
+  2px 2px 0px #000,
+  3px 3px 0px #000,
+  4px 4px 0px #000,
+  5px 5px 0px #000,
+  6px 6px 0px #000,
+  7px 7px 0px #000,
+  8px 8px 0px #000,
+  9px 9px 0px #000;
+  transform: translate(-9px, -9px);
+}

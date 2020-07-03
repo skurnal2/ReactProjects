@@ -21,11 +21,15 @@ class App extends React.Component {
     render() {
         return (
             <div>                        
-            <input type="text" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} />
+            <input type="text" placeholder="Color #1" className="box-shadow-3d" defaultValue={this.state.chosenColor} onChange={e => this.changeColor(e.target.value)} />
             <div id="meme-holder">               
                 <Sunshine fill={this.state.chosenColor} cssclass="sunshine" />
                 <img src={smiley} className="smiley" alt="Sunshine SVG" />
             </div>
+            
+            <h3>
+                Made by Siddharth Kurnal
+            </h3>
             </div>
         );
     }
