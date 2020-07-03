@@ -17,8 +17,13 @@ With this application, we can upload an image (png with transparent background r
 - Using **Color Text** (e.g. Blue, Red)
 
 
-### Screenshots
+### Demo & Screenshots
+
+Here's the DEMO:
+![Sunshine Demo](https://github.com/skurnal2/30ProjectsIn60Days/blob/master/sunshine-meme-generator/sample/final.gif?raw=true)
 
 Here are some of the screenshots of the Applications: 
 
-
+![Sunshine Screen 1](https://github.com/skurnal2/30ProjectsIn60Days/blob/master/sunshine-meme-generator/sample/smiley-sample.JPG?raw=true)
+<br>
+![Sunshine Screen 2](https://github.com/skurnal2/30ProjectsIn60Days/blob/master/sunshine-meme-generator/sample/yao-sample.JPG?raw=true)
