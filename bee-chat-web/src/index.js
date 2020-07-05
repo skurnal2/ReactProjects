@@ -9,19 +9,48 @@ import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
 
+    state = {
+        chats: {}
+    }
+
+    componentDidMount() {
+        fetch('https://sidprojectsapp.000webhostapp.com/bee-chat-rest-api/api/post/read')
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({chats: data})
+            })
+            .catch(console.log)
+    }
+
     render() {
        
         return(
             <motion.div className="main-panel shadow"
-                 animate= {{y: 20}}
+                initial="hidden"
+                animate="show"
+                transition={{delay: .5, duration: .3}} 
+                variants={{
+                    hidden: {
+                            opacity: 0, 
+                            borderRadius: "50%"
+                            },
+                    show: {
+                            y: 20, 
+                            opacity: 1,
+                            borderRadius: "0%"
+                          }
+                }}
             >
                 <motion.h1 
-                transition={{
-                    delay: 1.5,
-                    }} 
-                animate={{
+                whileHover={{
+                    rotate: 0,
+                    scale: 1,                    
+                }}
+                
+                animate={{                    
                     rotate: -15,
-                    scale: 1.2
+                    scale: 1.2,
+                    transition: {delay:2.5}
                     }}
                 >
                     BeeChat
