@@ -1,0 +1,34 @@
+.main-panel {
+    background-color: #FFDE03;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid #850097;
+    margin-top: 10vh;
+}
+
+@font-face {
+    font-family: "truelies";
+    src: url(true_lies.woff) format('woff');
+}
+
+h1 {
+    font-family: truelies;
+    color: #850097;
+    position: relative;
+    left: 1.5rem;    
+    top: 2rem;
+    display: inline-block;
+}
+
+.shadow {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+
+.chat-panel {
+    background-color: #8500971c;
+    margin-top: 4rem;
+    border-radius: 5px;
+    padding: 1rem;
+}
