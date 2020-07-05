@@ -3,10 +3,10 @@
         private $conn;
         private $table = 'chats';
 
-        //Post Properties
+        //Chat Properties
         public $id;
         public $user_id;
-        public $username;
+        public $username; //This is coming from the users table
         public $chat_text;
         public $time_sent;
 
@@ -15,7 +15,7 @@
             $this->conn = $db;
         }
 
-        //Get Posts
+        //Get Chats
         public function read() {
             //Create query
             $query = 'SELECT  
@@ -28,8 +28,8 @@
                 ' . $this->table . ' c
                 LEFT JOIN
                     users u ON u.id = c.user_id
-                ORDER BY
-                    c.$time_sent DESC';
+                ORDER BY 
+                    c.time_sent DESC';
                 
             //Preparing statement
             $stmt = $this->conn->prepare($query);
