@@ -75,4 +75,36 @@
             $this->username = $row['username'];
             $this->time_sent = $row['time_sent'];
         }
+
+        //Create CHAT item
+        public function create() {
+            //Create Query
+            $query = 'INSERT INTO ' . $this->table . '
+             SET
+                user_id = :user_id,
+                chat_text = :chat_text';
+
+            //Prepare statement
+            $stmt = $this->conn->prepare($query);
+
+            //Clean Data
+            $this->user_id = htmlspecialchars(strip_tags($this->user_id)); //Just a way to sanitize the data
+            $this->chat_text = htmlspecialchars(strip_tags($this->chat_text)); 
+            
+
+            //Bind the data
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->bindParam(':chat_text', $this->chat_text);
+
+            //Execute the query
+            if($stmt->execute()) {
+                return true;
+            }
+
+            //Print error if something goes wrong
+            printf("Error: %s.\n", $stmt->error);
+            
+            return false;
+            
+        }
     }
