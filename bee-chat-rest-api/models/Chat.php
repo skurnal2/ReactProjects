@@ -39,4 +39,43 @@
 
             return $stmt;
         }
+
+        //Get Single Chat
+        public function read_single() {
+            //Create query
+            $query = 'SELECT  
+                u.username as username,
+                c.id,
+                c.user_id,
+                c.chat_text,
+                c.time_sent           
+              FROM
+                ' . $this->table . ' c
+                LEFT JOIN
+                    users u ON u.id = c.user_id
+                WHERE
+                    c.id = ? 
+                LIMIT 0, 1';
+            
+            //Preparing statement
+            $stmt = $this->conn->prepare($query);
+
+            //Binding parameters            
+            $stmt->bindParam(1, $this->id);
+
+            //Execute query
+            $stmt->execute();
+
+            return $stmt;
+
+            //Fetching the single associate array now instead of doing this later
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            //Set Properties
+            $this->id = 100;
+            $this->user_id = $row['user_id'];
+            $this->chat_text = $row['chat_text'];
+            $this->username = $row['username'];
+            $this->time_sent = $row['time_sent'];
+        }
     }
