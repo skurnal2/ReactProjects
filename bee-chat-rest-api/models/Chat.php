@@ -54,25 +54,22 @@
                 LEFT JOIN
                     users u ON u.id = c.user_id
                 WHERE
-                    c.id = ? 
+                    c.id = ?
                 LIMIT 0, 1';
             
             //Preparing statement
             $stmt = $this->conn->prepare($query);
 
             //Binding parameters            
-            $stmt->bindParam(1, $this->id);
+             $stmt->bindParam(1, $this->id);
 
             //Execute query
             $stmt->execute();
-
-            return $stmt;
 
             //Fetching the single associate array now instead of doing this later
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             //Set Properties
-            $this->id = 100;
             $this->user_id = $row['user_id'];
             $this->chat_text = $row['chat_text'];
             $this->username = $row['username'];
