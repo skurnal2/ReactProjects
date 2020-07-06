@@ -4,32 +4,29 @@ import {motion} from "framer-motion";
 class Chats extends React.Component {
     render() {
 
-        const container = {
+        const list = {
+            visible: { opacity: 1 },
             hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.5
-              }
-            }
           }
           
           const item = {
-            hidden: { opacity: 0 },
-            show: { opacity: 1 }
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: -100 },
           }
 
         return (
-            <motion.div 
+            <motion.div
                 id="a-chat"
-                variants={container}
+                variants={list}
                 initial="hidden"
-                animate="show"
+                animate="visible"
+                
             >
                 {this.props.chats.map((chat, i) => (
-                    <motion.div 
+                    <motion.div                     
                         key={i}
                         variants={item}
+                        transition={{delay: i * 0.2}}
                     >
                         {chat.chat_text}
                     </motion.div>

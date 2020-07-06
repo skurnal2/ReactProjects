@@ -51,7 +51,7 @@ class App extends React.Component {
                 animate={{                    
                     rotate: -15,
                     scale: 1.2,
-                    transition: {delay:2.5}
+                    transition: {delay:1.5}
                     }}
                 >
                     BeeChat
