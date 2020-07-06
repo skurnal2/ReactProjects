@@ -28,7 +28,7 @@ class App extends React.Component {
         }) //Sets velue to our state
         .catch(console.log)
     }
-
+    
     render() {
         return (
             <Container className="p-3">
@@ -50,9 +50,9 @@ class App extends React.Component {
     }
 }
 
-// ========================================
+    // ========================================
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+    ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+    );

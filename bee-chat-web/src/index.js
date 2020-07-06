@@ -5,19 +5,20 @@ import './css/index.css';
 import {motion} from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
+import Chats from './components/chats';
 //#endregion
 
 class App extends React.Component {
 
     state = {
-        chats: {}
+        chats: []
     }
 
     componentDidMount() {
-        fetch('https://sidprojectsapp.000webhostapp.com/bee-chat-rest-api/api/post/read')
+        fetch('https://sidprojectsapp.000webhostapp.com/bee-chat-rest-api/api/post/read.php')
             .then(res => res.json())
             .then((data) => {
-                this.setState({chats: data})
+                this.setState({chats: data.data})
             })
             .catch(console.log)
     }
@@ -54,11 +55,9 @@ class App extends React.Component {
                     }}
                 >
                     BeeChat
-                </motion.h1><br/>
-                
-                
+                </motion.h1><br/>                                
                 <motion.div className="chat-panel">
-                    d
+                    <Chats chats={this.state.chats} />
                 </motion.div>
                 
             </motion.div>

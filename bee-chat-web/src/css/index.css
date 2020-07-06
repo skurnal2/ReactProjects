@@ -1,4 +1,5 @@
 .main-panel {
+    text-align: center;
     background-color: #FFDE03;
     padding: 1rem;
     border-radius: 5px;
@@ -15,7 +16,7 @@ h1 {
     font-family: truelies;
     color: #850097;
     position: relative;
-    left: 1.5rem;    
+    left: -.5rem;    
     top: 2rem;
     display: inline-block;
     cursor: cell;
@@ -32,4 +33,13 @@ h1 {
     margin-top: 4rem;
     border-radius: 5px;
     padding: 1rem;
+}
+
+#a-chat div {
+    background-color: #850097;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;    
 }
