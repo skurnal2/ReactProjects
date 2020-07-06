@@ -60,10 +60,12 @@ h1 {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     height: 100%;
+    min-height: 6rem;
+    max-height: 6rem;
+    resize: none;
 }
 
-#send-space textarea:focus {
-    border-radius: 5px;
+#send-space textarea:focus {    
     border: none;
     outline: none;
 }
@@ -75,8 +77,8 @@ h1 {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     width: 15%;
-    height: 5rem;
-    line-height: 5rem;
+    height: 6rem;
+    line-height: 6rem;
     display: inline-block;
     border: none;
     vertical-align: top;

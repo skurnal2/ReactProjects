@@ -61,7 +61,7 @@ class App extends React.Component {
                     <Chats chats={this.state.chats} />
                 </motion.div>
                 <SendChat/>
-            </motion.div>
+            </motion.div>            
         );
     }
 }

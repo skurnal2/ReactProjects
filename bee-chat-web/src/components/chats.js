@@ -19,14 +19,13 @@ class Chats extends React.Component {
                 id="a-chat"
                 variants={list}
                 initial="hidden"
-                animate="visible"
-                
+                animate="visible"                
             >
                 {this.props.chats.map((chat, i) => (
                     <motion.div                     
                         key={i}
                         variants={item}
-                        transition={{delay: i * 0.2}}
+                        transition={{delay: i * 0.2}}                        
                     >
                         {chat.chat_text}
                     </motion.div>
