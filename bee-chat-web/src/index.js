@@ -6,6 +6,7 @@ import {motion} from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Chats from './components/chats';
+import SendChat from './components/send-chat';
 //#endregion
 
 class App extends React.Component {
@@ -59,7 +60,7 @@ class App extends React.Component {
                 <motion.div className="chat-panel">
                     <Chats chats={this.state.chats} />
                 </motion.div>
-                
+                <SendChat/>
             </motion.div>
         );
     }
