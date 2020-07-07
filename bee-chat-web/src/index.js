@@ -11,12 +11,26 @@ import SendChat from './components/send-chat';
 
 class App extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.rerenderParentCallback = this.rerenderParentCallback.bind(this);
+      }
+
+    rerenderParentCallback() {
+        this.fetchResults();
+        
+    }
+
     state = {
         chats: []
     }
 
     componentDidMount() {
-        fetch('https://sidprojectsapp.000webhostapp.com/bee-chat-rest-api/api/post/read.php')
+        this.fetchResults();
+    }
+
+    fetchResults() {
+        fetch('http://localhost/30projectsin60days/bee-chat-rest-api/api/post/read.php')
             .then(res => res.json())
             .then((data) => {
                 this.setState({chats: data.data})
@@ -60,7 +74,7 @@ class App extends React.Component {
                 <motion.div className="chat-panel">
                     <Chats chats={this.state.chats} />
                 </motion.div>
-                <SendChat/>
+                <SendChat rerenderParentCallback={this.rerenderParentCallback}/>
             </motion.div>            
         );
     }

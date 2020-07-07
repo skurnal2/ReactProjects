@@ -14,6 +14,9 @@ class Chats extends React.Component {
             hidden: { opacity: 0, x: -100 },
           }
 
+        if(this.props.chats)
+        {
+        
         return (
             <motion.div
                 id="a-chat"
@@ -21,7 +24,7 @@ class Chats extends React.Component {
                 initial="hidden"
                 animate="visible"                
             >
-                {this.props.chats.map((chat, i) => (
+                { this.props.chats.map((chat, i) => (
                     <motion.div                     
                         key={i}
                         variants={item}
@@ -32,6 +35,12 @@ class Chats extends React.Component {
                 ))}
             </motion.div>
         );
+        }
+        else {
+            return (
+                <h4>No Chats to Show</h4>
+            );
+        }
     }
 }
 
