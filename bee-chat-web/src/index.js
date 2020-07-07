@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Chats from './components/chats';
@@ -14,15 +14,15 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.rerenderParentCallback = this.rerenderParentCallback.bind(this);
-      }
+
+        this.state = {
+            chats: [],
+            run_render: false
+        }
+    }
 
     rerenderParentCallback() {
         this.fetchResults();
-        
-    }
-
-    state = {
-        chats: []
     }
 
     componentDidMount() {
@@ -30,52 +30,66 @@ class App extends React.Component {
     }
 
     fetchResults() {
-        fetch('http://localhost/30projectsin60days/bee-chat-rest-api/api/post/read.php')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({chats: data.data})
-            })
-            .catch(console.log)
+        setTimeout(function () {
+            fetch('http://localhost/30projectsin60days/bee-chat-rest-api/api/post/read.php')
+                .then(res => res.json())
+                .then((data) => {
+                    this.setState({
+                        chats: data.data,
+                        run_render: true
+                    })
+                })
+                .catch(console.log)
+        }.bind(this), 500)
+
     }
 
     render() {
-       
-        return(
-            <motion.div className="main-panel shadow"
-                initial="hidden"
-                animate="show"
-                transition={{delay: .5, duration: .3}} 
-                variants={{
-                    hidden: {
-                            opacity: 0, 
+        let renderContainer = false;
+        if (this.state.run_render) {
+
+
+
+            return (
+                <motion.div className="main-panel shadow"
+                    initial="hidden"
+                    animate="show"
+                    transition={{ delay: .5, duration: .3 }}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
                             borderRadius: "50%"
-                            },
-                    show: {
-                            y: 20, 
+                        },
+                        show: {
+                            y: 20,
                             opacity: 1,
                             borderRadius: "0%"
-                          }
-                }}
-            >
-                <motion.h1 
-                whileHover={{
-                    rotate: 0,
-                    scale: 1,                    
-                }}
-                
-                animate={{                    
-                    rotate: -15,
-                    scale: 1.2,
-                    transition: {delay:1.5}
+                        }
                     }}
                 >
-                    BeeChat
-                </motion.h1><br/>                                
-                <motion.div className="chat-panel">
-                    <Chats chats={this.state.chats} />
+                    <motion.h1
+                        whileHover={{
+                            rotate: 0,
+                            scale: 1,
+                        }}
+
+                        animate={{
+                            rotate: -15,
+                            scale: 1.2,
+                            transition: { delay: 1.5 }
+                        }}
+                    >
+                        BeeChat
+                </motion.h1><br />
+                    <motion.div className="chat-panel">
+                        <Chats chats={this.state.chats} />
+                    </motion.div>
+                    <SendChat rerenderParentCallback={this.rerenderParentCallback} />
                 </motion.div>
-                <SendChat rerenderParentCallback={this.rerenderParentCallback}/>
-            </motion.div>            
+            );
+        }
+        return (
+            <div></div>
         );
     }
 }

@@ -2,6 +2,15 @@ import React from 'react';
 import {motion} from "framer-motion";
 
 class Chats extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            myChats: ''
+        }
+    }
+
     render() {
 
         const list = {
@@ -16,6 +25,7 @@ class Chats extends React.Component {
 
         if(this.props.chats)
         {
+            console.log(this.props.chats);
         
         return (
             <motion.div

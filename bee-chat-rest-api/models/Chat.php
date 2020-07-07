@@ -29,7 +29,7 @@
                 LEFT JOIN
                     users u ON u.id = c.user_id
                 ORDER BY 
-                    c.time_sent DESC';
+                    c.time_sent ASC';
                 
             //Preparing statement
             $stmt = $this->conn->prepare($query);
