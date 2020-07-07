@@ -8,14 +8,14 @@ constructor(props)
     super(props);
 
     this.state = {
-        send_value: ''
+        chat_text: ''
     }
 }
     
     changeHandler = e => {
         this.setState(
             {
-                send_value: e.target.value,
+                chat_text: e.target.value,
                 user_id: 1
             }
         )
