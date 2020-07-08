@@ -35,7 +35,7 @@ h1 {
     padding: 1rem;
     max-height: 50vh;
     display: flex;
-  flex-direction: column-reverse;
+    flex-direction: column-reverse;
     overflow: auto;    
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -52,6 +52,27 @@ h1 {
     border-radius: 5px;
     color: white;
     cursor: pointer;    
+    font-size: larger;
+    transition: .1s;
+}
+
+#a-chat div:hover {
+    background-color: #690077;
+    margin: .5rem .1rem;
+    padding: .5rem .9rem;
+}
+
+#a-chat div span {
+    float: left;
+    background-color: rgba(0, 0, 0, 0.253);
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: .5s;
+    font-size: medium;
+}
+
+#a-chat div span:hover {
+    background-color: rgba(0, 0, 0, 0.863);
 }
 
 #send-space {

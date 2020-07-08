@@ -20,7 +20,7 @@ class Chats extends React.Component {
           
           const item = {
             visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -150 },
+            hidden: { opacity: 0, x: -100 },
           }
 
         if(this.props.chats)
@@ -37,8 +37,10 @@ class Chats extends React.Component {
                     <motion.div                     
                         key={i}
                         variants={item}
-                        transition={{delay: i * 0.2}}                        
+                        transition={{delay: (this.props.chats.length - i) * 0.2}}                        
                     >
+                        <span>{chat.username}</span>                            
+                        <br/>
                         {chat.chat_text}
                     </motion.div>
                 ))}

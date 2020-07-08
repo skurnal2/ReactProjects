@@ -7,15 +7,14 @@ class SendChat extends React.Component {
 
         this.state = {
             chat_text: '',
-            user_id: 1
+            user_id: this.props.userid
         }
     }
 
     changeHandler = e => {
         this.setState(
             {
-                chat_text: e.target.value,
-                user_id: 1
+                chat_text: e.target.value                
             }
         )
     }
@@ -36,8 +35,7 @@ class SendChat extends React.Component {
 
             this.setState(
                 {
-                    chat_text: '',
-                    user_id: 1
+                    chat_text: ''                    
                 });
             this.props.rerenderParentCallback();
         }

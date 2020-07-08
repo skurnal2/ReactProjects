@@ -7,7 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Chats from './components/chats';
 import SendChat from './components/send-chat';
+import Cookies from 'universal-cookie';
 //#endregion
+
+const cookies = new Cookies();
 
 class App extends React.Component {
 
@@ -17,8 +20,15 @@ class App extends React.Component {
 
         this.state = {
             chats: [],
-            run_render: false
+            run_render: false,
+            userid: 2//cookies.get("user_id")
         }
+    }
+
+    resetUser() {
+        this.setState({
+            userid: cookies.get("user_id")
+        });         
     }
 
     rerenderParentCallback() {
@@ -47,9 +57,6 @@ class App extends React.Component {
     render() {
         
         if (this.state.run_render) {
-
-
-
             return (
                 <motion.div className="main-panel shadow"
                     initial="hidden"
@@ -84,7 +91,7 @@ class App extends React.Component {
                     <motion.div className="chat-panel">
                         <Chats chats={this.state.chats} />
                     </motion.div>
-                    <SendChat rerenderParentCallback={this.rerenderParentCallback} />
+                    <SendChat rerenderParentCallback={this.rerenderParentCallback}  userid={this.state.userid} />
                 </motion.div>
             );
         }
