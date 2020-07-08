@@ -20,12 +20,11 @@ class Chats extends React.Component {
           
           const item = {
             visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: -100 },
+            hidden: { opacity: 0, x: -150 },
           }
 
         if(this.props.chats)
         {
-            console.log(this.props.chats);
         
         return (
             <motion.div

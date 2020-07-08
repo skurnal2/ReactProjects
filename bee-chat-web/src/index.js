@@ -45,7 +45,7 @@ class App extends React.Component {
     }
 
     render() {
-        let renderContainer = false;
+        
         if (this.state.run_render) {
 
 

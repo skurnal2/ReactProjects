@@ -34,7 +34,9 @@ h1 {
     border-radius: 5px;
     padding: 1rem;
     max-height: 50vh;
-    overflow-y: scroll;    
+    display: flex;
+  flex-direction: column-reverse;
+    overflow: auto;    
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -92,4 +94,19 @@ h1 {
     vertical-align: top;
     text-align: center;
     cursor: pointer;
+    outline: none;
+}
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 1s;
+  }
+.ripple:hover {
+background: #850097 radial-gradient(circle, transparent 1%, #9900ad 1%) center/15000%;
+}
+.ripple:active {
+background-color: #850097;
+background-size: 100%;
+transition: background  0s;
 }

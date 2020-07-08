@@ -23,8 +23,6 @@ class SendChat extends React.Component {
     submitHandler = e => {
         e.preventDefault();
 
-        console.log(this.state);
-
         if (this.state.chat_text) {
 
             axios.post('http://localhost/30projectsin60days/bee-chat-rest-api/api/post/create.php',
@@ -53,7 +51,7 @@ class SendChat extends React.Component {
             <div id="send-space">
                 <form onSubmit={this.submitHandler}>
                     <textarea value={send_value} onChange={this.changeHandler} />
-                    <input type="submit" id="send" value="Send" />
+                    <input type="submit" className="ripple" id="send" value="Send" />
                 </form>
             </div>
         );
