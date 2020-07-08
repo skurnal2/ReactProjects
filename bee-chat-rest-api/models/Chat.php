@@ -2,6 +2,7 @@
     class Chat {
         private $conn;
         private $table = 'chats';
+        private $table2 = 'users';
 
         //Chat Properties
         public $id;
@@ -44,17 +45,12 @@
         public function read_single() {
             //Create query
             $query = 'SELECT  
-                u.username as username,
-                c.id,
-                c.user_id,
-                c.chat_text,
-                c.time_sent           
+                username,
+                id 
               FROM
-                ' . $this->table . ' c
-                LEFT JOIN
-                    users u ON u.id = c.user_id
+                ' . $this->table2 . ' 
                 WHERE
-                    c.id = ?
+                    id = ?
                 LIMIT 0, 1';
             
             //Preparing statement
@@ -70,10 +66,8 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             //Set Properties
-            $this->user_id = $row['user_id'];
-            $this->chat_text = $row['chat_text'];
+            $this->user_id = $row['id'];
             $this->username = $row['username'];
-            $this->time_sent = $row['time_sent'];
         }
 
         //Create CHAT item

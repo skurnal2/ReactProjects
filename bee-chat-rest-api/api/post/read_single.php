@@ -20,12 +20,9 @@
     $chat->read_single();
 
     //Create array
-    $chat_arr = array(
-        'id' => $chat->id,
-        'user_id' => $chat->user_id,
-        'chat_text' => $chat->chat_text,
-        'username' => $chat->username,
-        'time_sent' => $chat->time_sent
+    $chat_arr = array(        
+        'user_id' => $chat->user_id,        
+        'username' => $chat->username        
     );
 
     //Convert to JSON

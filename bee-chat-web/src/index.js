@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Chats from './components/chats';
 import SendChat from './components/send-chat';
 import Cookies from 'universal-cookie';
+import Login from './components/login';
 //#endregion
 
 const cookies = new Cookies();
@@ -21,7 +22,7 @@ class App extends React.Component {
         this.state = {
             chats: [],
             run_render: false,
-            userid: 2//cookies.get("user_id")
+            userid: 2,//cookies.get("user_id")            
         }
     }
 
@@ -86,8 +87,9 @@ class App extends React.Component {
                             transition: { delay: 1.5 }
                         }}
                     >
-                        BeeChat
+                        BeeChat                        
                 </motion.h1><br />
+                <Login/>
                     <motion.div className="chat-panel">
                         <Chats chats={this.state.chats} />
                     </motion.div>

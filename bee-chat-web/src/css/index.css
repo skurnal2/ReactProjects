@@ -94,10 +94,17 @@ h1 {
     min-height: 6rem;
     max-height: 6rem;
     resize: none;
+    border: .1rem solid #850097;
+    transition: .1s;
+
+    /* Text Styling */
+    font-size: 1.2em;
 }
 
 #send-space textarea:focus {    
-    border: none;
+    border-width: .3rem;
+    border-right-width: .1rem;
+    padding: .8rem;
     outline: none;
 }
 
@@ -114,8 +121,7 @@ h1 {
     border: none;
     vertical-align: top;
     text-align: center;
-    cursor: pointer;
-    outline: none;
+    cursor: pointer;    
 }
 
 /* Ripple effect */
@@ -130,4 +136,29 @@ background: #850097 radial-gradient(circle, transparent 1%, #9900ad 1%) center/1
 background-color: #850097;
 background-size: 100%;
 transition: background  0s;
+}
+
+#login-container {
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+}
+
+#user-label {
+    padding: 1rem;
+    padding-right: 0rem;
+    background-color: #850097;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;;
+}
+
+#login-container span {
+    background-color: white;
+    color: #850097;
+    padding: 1rem;
+    margin: 0rem .05rem .1rem .6rem;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
