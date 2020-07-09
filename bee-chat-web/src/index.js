@@ -20,6 +20,8 @@ class App extends React.Component {
         super(props);
         this.rerenderParentCallback = this.rerenderParentCallback.bind(this);
         this.rerenderParentDisplayChats = this.rerenderParentDisplayChats.bind(this);
+        this.rerenderParentDisplayChatsHide = this.rerenderParentDisplayChatsHide.bind(this);
+        
         this.state = {
             chats: [],
             run_render: false,
@@ -33,6 +35,7 @@ class App extends React.Component {
             userid: cookies.get("user_id")
         });
     }
+    
 
     rerenderParentCallback() {
         this.fetchResults();
@@ -40,6 +43,10 @@ class App extends React.Component {
 
     rerenderParentDisplayChats() {
         this.setState({display_chats: true});
+    }
+
+    rerenderParentDisplayChatsHide() {
+        this.setState({display_chats: false});
     }
 
     componentDidMount() {
@@ -50,7 +57,7 @@ class App extends React.Component {
         this.checkUser();
         if(this.state.userid) {
             this.rerenderParentDisplayChats();
-        }        
+        }      
     }
 
     fetchResults() {
@@ -68,8 +75,7 @@ class App extends React.Component {
 
     }
 
-    render() {
-
+    render() {        
         if (this.state.run_render) {
             return (
                 <motion.div className="main-panel shadow"
@@ -102,7 +108,7 @@ class App extends React.Component {
                     >
                         BeeChat
                 </motion.h1><br />
-                    {this.state.display_chats ? <Login /> : null}
+                    {this.state.display_chats ? <Login userid={this.state.userid} rerenderParentDisplayChatsHide={this.rerenderParentDisplayChatsHide} /> : null}
                     <motion.div className="chat-panel">
 
                         {this.state.display_chats ? <Chats chats={this.state.chats} /> : <LoginPanel rerenderParentDisplayChats={this.rerenderParentDisplayChats} />}

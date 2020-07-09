@@ -1,4 +1,7 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Login extends React.Component {
     
@@ -8,7 +11,7 @@ class Login extends React.Component {
         this.state = {
             user_info: {
                 username: '',
-                user_id: "2"
+                user_id: this.props.userid
             },            
         }
     }
@@ -30,12 +33,20 @@ class Login extends React.Component {
         }.bind(this), 500)
     }
 
+    logoutUser = e => {
+        cookies.remove('user_id', { path: '/' });
+        this.props.rerenderParentDisplayChatsHide();
+    }
+
     render() {
         return (
             <div id="login-container">
                 <div id="user-label">
                     User
                     <span>{this.state.user_info.username}</span>
+                </div>
+                <div id="logout" onClick={this.logoutUser} >
+                    Logout
                 </div>
             </div>
         );

@@ -30,7 +30,7 @@ h1 {
 
 .chat-panel {
     background-color: #8500971c;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     border-radius: 5px;
     padding: 1rem;
     max-height: 50vh;
@@ -166,11 +166,8 @@ transition: background  0s;
     border-top-left-radius: 0;
 }
 
-#login-container:hover #user-label{
+#user-label:hover{
     background-color: #9b00af;
-}
-
-#login-dashboard {
 }
 
 #userid-container {
@@ -235,4 +232,22 @@ transition: background  0s;
 
 #login-dashboard input[type="submit"]:active {
     transform: scale(0.8);
+}
+
+#logout {
+    background-color: #9900ad;
+    padding: .2rem .5rem;   
+    margin-top: .3rem;
+    border-radius: 5px;
+    float: right;
+    color: white;
+    border: 1.5px solid transparent;
+    font-size: .9rem;
+    transition: .5s;
+}
+
+#logout:hover {
+    border: 1.5px solid #9900ad;
+    background-color: white;
+    color: #9900ad;
 }
