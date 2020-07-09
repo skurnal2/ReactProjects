@@ -173,7 +173,7 @@ transition: background  0s;
 #login-dashboard {
 }
 
-#username-container {
+#userid-container {
     background-color: #9b00af;
     display: inline-block;
     font-size: 1.3rem;
@@ -184,11 +184,11 @@ transition: background  0s;
     transition: .5s;
 }
 
-#username-container span {
+#userid-container span {
     margin: 0 1rem;    
 }
 
-#username-container input {
+#userid-container input {
     border-radius: 25px;
     border: none;
     height: 2.5rem;
@@ -199,11 +199,11 @@ transition: background  0s;
     transition: .5s;
 }
 
-#username-container input:focus {
+#userid-container input:focus {
     border-radius: 5px;
 }
 
-#username-container:focus-within{
+#userid-container:focus-within{
     border-radius: 5px;
     background-color: #b300ca;
 }
@@ -224,11 +224,15 @@ transition: background  0s;
     font-size: 1.2rem;
     border-radius: 10px;
     transition: .5s;
+    outline: none;
 }
 
 #login-dashboard input[type="submit"]:hover {
     background-color: #9900ad;
     border: .3rem solid white;
-
     color: #FFDE03;
+}
+
+#login-dashboard input[type="submit"]:active {
+    transform: scale(0.8);
 }
