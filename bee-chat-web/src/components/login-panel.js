@@ -16,7 +16,10 @@ class LoginPanel extends React.Component {
 
     submitHandler = e => {
         e.preventDefault();
-        cookies.set('user_id', this.state.userid, { path: '/' }) //Setting the cookie
+        if(this.state.userid)
+        {
+            cookies.set('user_id', this.state.userid, { path: '/' }) //Setting the cookie
+        }
         this.checkCookie();
     }
 
@@ -34,7 +37,8 @@ class LoginPanel extends React.Component {
             //Check if userid is right - Will do this later using REST API call
             //if it is not, then give the message and stay on the same page
             //if it is right, then change state of needLogin here and display_chats in parent
-            
+            this.setState({needLogin: false});
+            this.props.rerenderParentDisplayChats();
         }
     }
 

@@ -19,16 +19,16 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.rerenderParentCallback = this.rerenderParentCallback.bind(this);
-
+        this.rerenderParentDisplayChats = this.rerenderParentDisplayChats.bind(this);
         this.state = {
             chats: [],
             run_render: false,
-            userid: 2,//cookies.get("user_id")  
+            userid: cookies.get("user_id"),
             display_chats: false
         }
     }
 
-    resetUser() {
+    checkUser() {
         this.setState({
             userid: cookies.get("user_id")
         });
@@ -38,8 +38,19 @@ class App extends React.Component {
         this.fetchResults();
     }
 
+    rerenderParentDisplayChats() {
+        this.setState({display_chats: true});
+    }
+
     componentDidMount() {
+        //Fetching Results for the first time 
         this.fetchResults();
+
+        //Checking user cookie then deciding login user or show chats
+        this.checkUser();
+        if(this.state.userid) {
+            this.rerenderParentDisplayChats();
+        }        
     }
 
     fetchResults() {
@@ -94,7 +105,7 @@ class App extends React.Component {
                     {this.state.display_chats ? <Login /> : null}
                     <motion.div className="chat-panel">
 
-                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : <LoginPanel />}
+                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : <LoginPanel rerenderParentDisplayChats={this.rerenderParentDisplayChats} />}
                     </motion.div>
                     {this.state.display_chats ? <SendChat rerenderParentCallback={this.rerenderParentCallback} userid={this.state.userid} /> : null}
                 </motion.div>
