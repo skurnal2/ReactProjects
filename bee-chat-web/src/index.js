@@ -30,7 +30,7 @@ class App extends React.Component {
         }
     }
 
-    checkUser() {
+    updateUser() {
         this.setState({
             userid: cookies.get("user_id")
         });
@@ -43,10 +43,12 @@ class App extends React.Component {
 
     rerenderParentDisplayChats() {
         this.setState({display_chats: true});
+        this.updateUser();
     }
 
     rerenderParentDisplayChatsHide() {
         this.setState({display_chats: false});
+        this.updateUser();
     }
 
     componentDidMount() {
@@ -54,7 +56,7 @@ class App extends React.Component {
         this.fetchResults();
 
         //Checking user cookie then deciding login user or show chats
-        this.checkUser();
+        this.updateUser();
         if(this.state.userid) {
             this.rerenderParentDisplayChats();
         }      
@@ -111,7 +113,7 @@ class App extends React.Component {
                     {this.state.display_chats ? <Login userid={this.state.userid} rerenderParentDisplayChatsHide={this.rerenderParentDisplayChatsHide} /> : null}
                     <motion.div className="chat-panel">
 
-                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : <LoginPanel rerenderParentDisplayChats={this.rerenderParentDisplayChats} />}
+                        {this.state.display_chats ? <Chats chats={this.state.chats} userid={this.state.userid} /> : <LoginPanel rerenderParentDisplayChats={this.rerenderParentDisplayChats} />}
                     </motion.div>
                     {this.state.display_chats ? <SendChat rerenderParentCallback={this.rerenderParentCallback} userid={this.state.userid} /> : null}
                 </motion.div>

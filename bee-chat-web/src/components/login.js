@@ -21,7 +21,7 @@ class Login extends React.Component {
     }
 
     fetchUser() {
-        setTimeout(function () {
+     
             fetch('http://localhost/30projectsin60days/bee-chat-rest-api/api/post/read_single.php?id='+ this.state.user_info.user_id)
                 .then(res => res.json())
                 .then((data) => {
@@ -30,7 +30,7 @@ class Login extends React.Component {
                     })
                 })
                 .catch(console.log)
-        }.bind(this), 500)
+      
     }
 
     logoutUser = e => {

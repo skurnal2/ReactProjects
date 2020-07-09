@@ -23,6 +23,11 @@ class Chats extends React.Component {
             hidden: { opacity: 0, x: -100 },
           }
 
+          const item2 = {
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: 100 },
+          }
+
         if(this.props.chats)
         {
         
@@ -34,15 +39,28 @@ class Chats extends React.Component {
                 animate="visible"                
             >
                 { this.props.chats.map((chat, i) => (
-                    <motion.div                     
+                     this.props.userid == chat.user_id ? 
+                     <motion.div                     
                         key={i}
-                        variants={item}
+                        className="user-outgoing" 
+                        variants={item2}
                         transition={{delay: (this.props.chats.length - i) * 0.2}}                        
                     >
                         <span>{chat.username}</span>                            
                         <br/>
                         {chat.chat_text}
                     </motion.div>
+                    :
+                    <motion.div                     
+                        key={i}
+                        className="user-incoming" 
+                        variants={item}
+                        transition={{delay: (this.props.chats.length - i) * 0.2}}                        
+                    >
+                        <span>{chat.username}</span>                            
+                        <br/>
+                        {chat.chat_text}
+                    </motion.div>                                          
                 ))}
             </motion.div>
         );

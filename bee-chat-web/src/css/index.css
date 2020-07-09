@@ -45,8 +45,7 @@ h1 {
     display: none;
 }
 
-#a-chat div {
-    background-color: #850097;
+#a-chat div {    
     margin: .5rem;
     padding: .5rem;
     border-radius: 5px;
@@ -63,7 +62,6 @@ h1 {
 }
 
 #a-chat div span {
-    float: left;
     background-color: rgba(0, 0, 0, 0.253);
     padding: 2px 5px;
     border-radius: 5px;
@@ -73,6 +71,22 @@ h1 {
 
 #a-chat div span:hover {
     background-color: rgba(0, 0, 0, 0.863);
+}
+
+.user-outgoing {
+    background-color: #9e00b3;    
+}
+
+.user-outgoing span {
+    float: right;
+}
+
+.user-incoming {
+    background-color: #810092;
+}
+
+.user-incoming span {
+    float: left;
 }
 
 #send-space {
