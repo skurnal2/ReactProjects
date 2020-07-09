@@ -40,6 +40,7 @@ class Chats extends React.Component {
             >
                 { this.props.chats.map((chat, i) => (
                      this.props.userid == chat.user_id ? 
+                     <div className="right-chat-item">
                      <motion.div                     
                         key={i}
                         className="user-outgoing" 
@@ -50,7 +51,9 @@ class Chats extends React.Component {
                         <br/>
                         {chat.chat_text}
                     </motion.div>
+                    </div>
                     :
+                    <div className="left-chat-item">
                     <motion.div                     
                         key={i}
                         className="user-incoming" 
@@ -60,7 +63,8 @@ class Chats extends React.Component {
                         <span>{chat.username}</span>                            
                         <br/>
                         {chat.chat_text}
-                    </motion.div>                                          
+                    </motion.div>  
+                    </div>                                        
                 ))}
             </motion.div>
         );

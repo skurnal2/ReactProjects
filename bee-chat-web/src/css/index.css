@@ -45,7 +45,7 @@ h1 {
     display: none;
 }
 
-#a-chat div {    
+#a-chat div div {    
     margin: .5rem;
     padding: .5rem;
     border-radius: 5px;
@@ -53,15 +53,15 @@ h1 {
     cursor: pointer;    
     font-size: larger;
     transition: .1s;
+    display: inline-block;
+    width: 80%;
 }
 
-#a-chat div:hover {
+#a-chat div div:hover {
     background-color: #690077;
-    margin: .5rem .1rem;
-    padding: .5rem .9rem;
 }
 
-#a-chat div span {
+#a-chat div div span {
     background-color: rgba(0, 0, 0, 0.253);
     padding: 2px 5px;
     border-radius: 5px;
@@ -69,23 +69,39 @@ h1 {
     font-size: medium;
 }
 
-#a-chat div span:hover {
+#a-chat div div span:hover {
     background-color: rgba(0, 0, 0, 0.863);
 }
 
-.user-outgoing {
+.right-chat-item {
+    text-align: right;
+}
+
+.left-chat-item {
+    text-align: left;
+}
+
+.right-chat-item div {
     background-color: #9e00b3;    
 }
 
-.user-outgoing span {
+.right-chat-item div span {
     float: right;
 }
 
-.user-incoming {
+.right-chat-item div:hover span {
+    margin-right: .5rem;
+}
+
+.left-chat-item div:hover span {
+    margin-left: .5rem;
+}
+
+.left-chat-item div {
     background-color: #810092;
 }
 
-.user-incoming span {
+.left-chat-item div span {
     float: left;
 }
 
