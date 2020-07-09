@@ -1,7 +1,7 @@
 //#region IMPORTS
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
+import './css/index.scss';
 import { motion } from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
