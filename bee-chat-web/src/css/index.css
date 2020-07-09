@@ -169,3 +169,66 @@ transition: background  0s;
 #login-container:hover #user-label{
     background-color: #9b00af;
 }
+
+#login-dashboard {
+}
+
+#username-container {
+    background-color: #9b00af;
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: white;
+    transition: .5s;
+}
+
+#username-container span {
+    margin: 0 1rem;    
+}
+
+#username-container input {
+    border-radius: 25px;
+    border: none;
+    height: 2.5rem;
+    width: 15rem;
+    margin: .3rem;
+    outline: none;
+    padding: .5rem;
+    transition: .5s;
+}
+
+#username-container input:focus {
+    border-radius: 5px;
+}
+
+#username-container:focus-within{
+    border-radius: 5px;
+    background-color: #b300ca;
+}
+
+#login-dashboard input[type="submit"] {
+    /* Positioning */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+
+    /* Designing */
+    background-color: #FFDE03;
+    border: .3rem solid #9900ad;
+    color: #9900ad;
+    font-weight: bolder;
+    padding: .6rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#login-dashboard input[type="submit"]:hover {
+    background-color: #9900ad;
+    border: .3rem solid white;
+
+    color: #FFDE03;
+}

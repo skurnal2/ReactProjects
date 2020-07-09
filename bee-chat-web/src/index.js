@@ -9,6 +9,7 @@ import Chats from './components/chats';
 import SendChat from './components/send-chat';
 import Cookies from 'universal-cookie';
 import Login from './components/login';
+import LoginPanel from './components/login-panel';
 //#endregion
 
 const cookies = new Cookies();
@@ -23,14 +24,14 @@ class App extends React.Component {
             chats: [],
             run_render: false,
             userid: 2,//cookies.get("user_id")  
-            display_chats: false          
+            display_chats: false
         }
     }
 
     resetUser() {
         this.setState({
             userid: cookies.get("user_id")
-        });         
+        });
     }
 
     rerenderParentCallback() {
@@ -57,7 +58,7 @@ class App extends React.Component {
     }
 
     render() {
-        
+
         if (this.state.run_render) {
             return (
                 <motion.div className="main-panel shadow"
@@ -88,14 +89,14 @@ class App extends React.Component {
                             transition: { delay: 1.5 }
                         }}
                     >
-                        BeeChat                        
+                        BeeChat
                 </motion.h1><br />
-                {this.state.display_chats ? <Login/> : null}
+                    {this.state.display_chats ? <Login /> : null}
                     <motion.div className="chat-panel">
-                                        
-                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : "Hello"} 
+
+                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : <LoginPanel />}
                     </motion.div>
-                    <SendChat rerenderParentCallback={this.rerenderParentCallback}  userid={this.state.userid} />
+                    {this.state.display_chats ? <SendChat rerenderParentCallback={this.rerenderParentCallback} userid={this.state.userid} /> : null}
                 </motion.div>
             );
         }
