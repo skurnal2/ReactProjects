@@ -8,7 +8,7 @@ class Login extends React.Component {
         this.state = {
             user_info: {
                 username: '',
-                user_id: "1"
+                user_id: "2"
             },            
         }
     }
