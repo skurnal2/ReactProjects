@@ -56,7 +56,8 @@
     font-size: larger;
     transition: .1s;
     display: inline-block;
-    width: 80%;
+    max-width: 80%;
+    min-width: 32%;
   
     &:hover {
       background-color: #690077;
