@@ -22,7 +22,8 @@ class App extends React.Component {
         this.state = {
             chats: [],
             run_render: false,
-            userid: 2,//cookies.get("user_id")            
+            userid: 2,//cookies.get("user_id")  
+            display_chats: false          
         }
     }
 
@@ -89,9 +90,10 @@ class App extends React.Component {
                     >
                         BeeChat                        
                 </motion.h1><br />
-                <Login/>
+                {this.state.display_chats ? <Login/> : null}
                     <motion.div className="chat-panel">
-                        <Chats chats={this.state.chats} />
+                                        
+                        {this.state.display_chats ? <Chats chats={this.state.chats} /> : "Hello"} 
                     </motion.div>
                     <SendChat rerenderParentCallback={this.rerenderParentCallback}  userid={this.state.userid} />
                 </motion.div>
