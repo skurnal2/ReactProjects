@@ -5,7 +5,8 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [1, 2, 3]
+      data: [],
+      page: 1
     }
   }
 
@@ -14,24 +15,30 @@ export default class App extends React.Component {
   }
 
   getData = async () => {
-        const url = 'https://jsonplaceholder.typicode.com/photos?_limit=10';
+        const url = 'https://jsonplaceholder.typicode.com/photos?_limit=10&_page='+this.state.page;
         fetch(url).then((response) => response.json())
         .then((responseJson) => {
           this.setState({
-            data: responseJson
+            data: this.state.data.concat(responseJson)
           })
         })
-
-        console.log(this.state.data);
   }
 
   renderRow = ({item}) => {
     return (
       <View style={styles.item}>
-        <Image style={styles.itemImage}/>
+        <Image source={{uri: item.url}} style={styles.itemImage}/>
         <Text style={styles.itemText}>{item.title}</Text>
+        <Text style={styles.itemText}>{item.id}</Text>
       </View>
     )
+  }
+
+  handleLoadMore = () => {
+    this.setState(
+      {page: this.state.page + 1},
+      this.getData
+    );
   }
 
   render() {
@@ -41,6 +48,8 @@ export default class App extends React.Component {
         data={this.state.data}
         renderItem={this.renderRow}
         keyExtractor={(item, index) => index.toString()}
+        onEndReached={this.handleLoadMore} 
+        onEndReachedThreshold={0.1}        
       />
     );
   }
@@ -54,15 +63,15 @@ const styles = StyleSheet.create({
   item: {
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
-    marginBottom: 10
+    marginBottom: 10,
   },
   itemImage: {
     width: '100%',
-    height: 280,
-    resizeMode: 'cover'
+    height: 150,
+    resizeMode: 'cover',
   },
   itemText: {
     fontSize: 25,
-    padding: 5
+    padding: 5,
   }
 });
