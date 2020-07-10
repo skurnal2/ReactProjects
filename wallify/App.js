@@ -1,16 +1,24 @@
 import React from 'react';
-import { StyleSheet, FlatList, Text, Image, View } from 'react-native';
+import { StyleSheet, 
+         FlatList, 
+         ActivityIndicator, 
+         Text, 
+         Image, 
+         View
+        } from 'react-native';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      page: 1
+      page: 1,
+      isLoading: false
     }
   }
 
   componentDidMount() {
+    this.setState({isLoading: true}, this.getData);
     this.getData()
   }
 
@@ -19,7 +27,8 @@ export default class App extends React.Component {
         fetch(url).then((response) => response.json())
         .then((responseJson) => {
           this.setState({
-            data: this.state.data.concat(responseJson)
+            data: this.state.data.concat(responseJson),
+            isLoading: false
           })
         })
   }
@@ -36,8 +45,17 @@ export default class App extends React.Component {
 
   handleLoadMore = () => {
     this.setState(
-      {page: this.state.page + 1},
+      {page: this.state.page + 1, isLoading: true},
       this.getData
+    );
+  }
+
+  renderFooter = () => {
+    return(
+      this.state.isLoading ?
+          <View style={styles.loader}>
+            <ActivityIndicator size="large"/>
+          </View> : null
     );
   }
 
@@ -50,6 +68,7 @@ export default class App extends React.Component {
         keyExtractor={(item, index) => index.toString()}
         onEndReached={this.handleLoadMore} 
         onEndReachedThreshold={0.1}        
+        ListFooterComponent={this.renderFooter}
       />
     );
   }
@@ -59,6 +78,10 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     backgroundColor: '#F5FCFF',
+  },
+  loader: {
+    marginTop: 10,
+    alignItems: 'center',
   },
   item: {
     borderBottomColor: '#ccc',
