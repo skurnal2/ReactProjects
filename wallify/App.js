@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({isLoading: true}, this.getData);
-    this.getData()
+    //this.getData() - Was showing 2 times
   }
 
   getData = async () => {
@@ -36,8 +36,8 @@ export default class App extends React.Component {
   renderRow = ({item}) => {
     return (
       <View style={styles.item}>
-        <Image source={{uri: item.url}} style={styles.itemImage}/>
-        <Text style={styles.itemText}>{item.title}</Text>
+        <Image source={{uri: item.thumbnailUrl}} style={styles.itemImage}/>
+        <Text style={styles.itemText}>{item.url}</Text>
         <Text style={styles.itemText}>{item.id}</Text>
       </View>
     )
@@ -52,10 +52,13 @@ export default class App extends React.Component {
 
   renderFooter = () => {
     return(
-      this.state.isLoading ?
-          <View style={styles.loader}>
-            <ActivityIndicator size="large"/>
-          </View> : null
+       this.state.isLoading ?
+           <View style={styles.loader}>
+              <ActivityIndicator color="00ff00" size="large" />
+              <Text>Wait!</Text>
+            </View>
+          : null
+      
     );
   }
 
@@ -67,8 +70,9 @@ export default class App extends React.Component {
         renderItem={this.renderRow}
         keyExtractor={(item, index) => index.toString()}
         onEndReached={this.handleLoadMore} 
-        onEndReachedThreshold={0.1}        
+        onEndReachedThreshold={0.7}        
         ListFooterComponent={this.renderFooter}
+        
       />
     );
   }
@@ -77,10 +81,11 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF',    
   },
   loader: {
     marginTop: 10,
+    marginBottom: 10,    
     alignItems: 'center',
   },
   item: {
