@@ -5,7 +5,8 @@ import {
   ActivityIndicator,
   Text,
   ImageBackground,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 
 export default class App extends React.Component {
@@ -37,11 +38,13 @@ export default class App extends React.Component {
   renderRow = ({ item }) => {
     return (
       <View style={styles.item}>
-        <ImageBackground
-          source={{ uri: item.download_url }}
-          style={styles.itemImage}>
-          <Text style={styles.itemText}>{item.author}</Text>
-        </ImageBackground>
+        <TouchableOpacity>
+          <ImageBackground
+            source={{ uri: item.download_url }}
+            style={styles.itemImage}>
+            <Text style={styles.itemText}>{item.author}</Text>
+          </ImageBackground>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -57,7 +60,7 @@ export default class App extends React.Component {
     return (
       this.state.isLoading ?
         <View style={styles.loader}>
-          <ActivityIndicator color="00ff00" size="large" />
+          <ActivityIndicator color="#FFF" size="large" />
           <Text>Wait!</Text>
         </View>
         : null
@@ -83,8 +86,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#000',
   },
   loader: {
     marginTop: 10,
@@ -92,22 +94,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   item: {
-
     marginBottom: 5,
-    
   },
-  itemImage: {    
+  itemImage: {
     height: 200,
     resizeMode: 'cover',
     borderRadius: 10,
     margin: 15,
     position: "relative",
-    overflow: "hidden"
+    overflow: "hidden",
+    backgroundColor: "#ebf7ff",
   },
   itemText: {
     fontSize: 10,
     padding: 4,
-    borderRadius: 10,    
+    borderRadius: 10,
     position: "absolute",
     bottom: 0,
     margin: 5,
