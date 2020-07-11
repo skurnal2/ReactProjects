@@ -4,11 +4,11 @@ import {
   FlatList,
   ActivityIndicator,
   Text,
-  ImageBackground,
   View,
   TouchableOpacity
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
+import ListItem from './components/ListItem';
+
 
 export default class App extends React.Component {
   constructor() {
@@ -39,19 +39,7 @@ export default class App extends React.Component {
   renderRow = ({ item }) => {
     return (
       <View style={styles.item}>
-        <TouchableOpacity>
-          <LinearGradient
-            colors = {["#ebf7ff", "#8d9499", "#ebf7ff"]}
-            start = {{x: 0, y: 0}}
-            end = {{x: 1, y: 1}}
-            style={styles.gradient}>
-            <ImageBackground
-              source={{ uri: item.download_url }}
-              style={styles.itemImage}>
-              <Text style={styles.itemText}>{item.author}</Text>
-            </ImageBackground>
-          </LinearGradient>
-        </TouchableOpacity>
+        <ListItem item={item} />
       </View>
     )
   }
@@ -103,32 +91,5 @@ const styles = StyleSheet.create({
   item: {
     marginBottom: 5,
   },
-  itemImage: {
-    height: "100%",
-    width: "100%",
-    resizeMode: 'cover',
-    borderRadius: 10,    
-    overflow: "hidden",
-    position: "absolute",
-    top: 0,
-    backgroundColor: "transparent"
-  },
-  itemText: {
-    fontSize: 10,
-    padding: 4,
-    borderRadius: 10,
-    position: "absolute",
-    bottom: 0,
-    margin: 5,
-    left: 0,
-    color: "white",
-    backgroundColor: "#000",
-    opacity: .5,
-  },
-  gradient: {
-    height: 200,
-    margin: 15,    
-    borderRadius: 10,
-    position: "relative"
-  }
+
 });
