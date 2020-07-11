@@ -3,6 +3,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import List from './components/List';
+import Detail from './components/Detail';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Images" component={List} />
+          <Stack.Screen name="Image Detail" component={Detail} />
         </Stack.Navigator>
       </NavigationContainer>
     );
