@@ -12,9 +12,9 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Images">
           <Stack.Screen name="Images" component={List} />
-          <Stack.Screen name="Image Detail" component={Detail} />
+          <Stack.Screen name="Detail" component={Detail} />
         </Stack.Navigator>
       </NavigationContainer>
     );

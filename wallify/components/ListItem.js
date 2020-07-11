@@ -30,13 +30,13 @@ export class ListItem extends React.Component {
             toValue: 1,
             duration: 200,
             useNativeDriver: true,
-        }).start()
+        }).start();
     }
 
     render() {
         return (
             <TouchableWithoutFeedback
-            
+                onPress={() => this.props.navigation.navigate('Detail')}
                 onPressIn={() => this.animateIn()}
                 onPressOut={() => this.animateOut()}
             >

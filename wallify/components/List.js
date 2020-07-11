@@ -35,10 +35,10 @@ class List extends React.Component {
       })
   }
 
-  renderRow = ({ item }) => {
+  renderRow = ({ item }) => {      
     return (
       <View style={styles.item}>
-        <ListItem item={item} />
+        <ListItem navigation={this.props.navigation} item={item} />
       </View>
     )
   }
