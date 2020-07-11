@@ -3,20 +3,17 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import List from './components/List';
-import {
-  StyleSheet,
-  FlatList,
-  ActivityIndicator,
-  Text,
-  View,
-} from 'react-native';
+
+const Stack = createStackNavigator();
 
 export default class App extends React.Component {
 
   render() {
     return (
       <NavigationContainer>
-        <List />
+        <Stack.Navigator>
+          <Stack.Screen name="Images" component={List} />
+        </Stack.Navigator>
       </NavigationContainer>
     );
   }
