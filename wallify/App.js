@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, 
-         FlatList, 
-         ActivityIndicator, 
-         Text, 
-         Image, 
-         View
-        } from 'react-native';
+import {
+  StyleSheet,
+  FlatList,
+  ActivityIndicator,
+  Text,
+  ImageBackground,
+  View
+} from 'react-native';
 
 export default class App extends React.Component {
   constructor() {
@@ -18,47 +19,49 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({isLoading: true}, this.getData);
+    this.setState({ isLoading: true }, this.getData);
     //this.getData() - Was showing 2 times
   }
 
   getData = async () => {
-        const url = 'https://jsonplaceholder.typicode.com/photos?_limit=10&_page='+this.state.page;
-        fetch(url).then((response) => response.json())
-        .then((responseJson) => {
-          this.setState({
-            data: this.state.data.concat(responseJson),
-            isLoading: false
-          })
+    const url = 'https://picsum.photos/v2/list?limit=10&page=' + this.state.page;
+    fetch(url).then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          data: this.state.data.concat(responseJson),
+          isLoading: false
         })
+      })
   }
 
-  renderRow = ({item}) => {
+  renderRow = ({ item }) => {
     return (
       <View style={styles.item}>
-        <Image source={{uri: item.thumbnailUrl}} style={styles.itemImage}/>
-        <Text style={styles.itemText}>{item.url}</Text>
-        <Text style={styles.itemText}>{item.id}</Text>
+        <ImageBackground
+          source={{ uri: item.download_url }}
+          style={styles.itemImage}>
+          <Text style={styles.itemText}>{item.author}</Text>
+        </ImageBackground>
       </View>
     )
   }
 
   handleLoadMore = () => {
     this.setState(
-      {page: this.state.page + 1, isLoading: true},
+      { page: this.state.page + 1, isLoading: true },
       this.getData
     );
   }
 
   renderFooter = () => {
-    return(
-       this.state.isLoading ?
-           <View style={styles.loader}>
-              <ActivityIndicator color="00ff00" size="large" />
-              <Text>Wait!</Text>
-            </View>
-          : null
-      
+    return (
+      this.state.isLoading ?
+        <View style={styles.loader}>
+          <ActivityIndicator color="00ff00" size="large" />
+          <Text>Wait!</Text>
+        </View>
+        : null
+
     );
   }
 
@@ -69,10 +72,10 @@ export default class App extends React.Component {
         data={this.state.data}
         renderItem={this.renderRow}
         keyExtractor={(item, index) => index.toString()}
-        onEndReached={this.handleLoadMore} 
-        onEndReachedThreshold={0.7}        
+        onEndReached={this.handleLoadMore}
+        onEndReachedThreshold={0.7}
         ListFooterComponent={this.renderFooter}
-        
+
       />
     );
   }
@@ -81,25 +84,36 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    backgroundColor: '#F5FCFF',    
+    backgroundColor: '#F5FCFF',
   },
   loader: {
     marginTop: 10,
-    marginBottom: 10,    
+    marginBottom: 10,
     alignItems: 'center',
   },
   item: {
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    marginBottom: 10,
+
+    marginBottom: 5,
+    
   },
-  itemImage: {
-    width: '100%',
-    height: 150,
+  itemImage: {    
+    height: 200,
     resizeMode: 'cover',
+    borderRadius: 10,
+    margin: 15,
+    position: "relative",
+    overflow: "hidden"
   },
   itemText: {
-    fontSize: 25,
-    padding: 5,
+    fontSize: 10,
+    padding: 4,
+    borderRadius: 10,    
+    position: "absolute",
+    bottom: 0,
+    margin: 5,
+    left: 0,
+    color: "white",
+    backgroundColor: "#000",
+    opacity: .5,
   }
 });
