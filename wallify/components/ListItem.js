@@ -11,30 +11,40 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient'
 
-class ListItem extends React.Component {
+export class ListItem extends React.Component {
 
     state = {
-
+        animatePress: new Animated.Value(1)
     }
 
     animate() {
-        Animated.timing()
+        Animated.timing(this.state.animatePress, {
+            toValue: 0.8,
+            duration: 500
+        }).start()
     }
 
     render() {
         return (
             <TouchableWithoutFeedback onPress={() => this.animate()}>
+                <Animated.View style={[styles.parentView, {
+                    transform: [{scale: this.state.animatePress}]
+                }]}
+                
+                >
                 <LinearGradient
                     colors={["#ebf7ff", "#8d9499", "#ebf7ff"]}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
-                    style={styles.gradient}>
+                    style={styles.gradient}
+                 >
                     <ImageBackground
-                        source={{ uri: item.download_url }}
+                        source={{ uri: this.props.item.download_url }}
                         style={styles.itemImage}>
-                        <Text style={styles.itemText}>{item.author}</Text>
+                        <Text style={styles.itemText}>{this.props.item.author}</Text>
                     </ImageBackground>
                 </LinearGradient>
+                </Animated.View>
             </TouchableWithoutFeedback>
         );
     }
@@ -63,11 +73,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
         opacity: .5,
     },
-    gradient: {
+    gradient: {        
+        borderRadius: 10,
+        height: "100%",
+        width: "100%",
+        position: "absolute"
+    },
+    parentView: {
+        position: "relative",
         height: 200,
         margin: 15,
         borderRadius: 10,
-        position: "relative"
+        backgroundColor: '#e3e3e3'
     }
 });
 
