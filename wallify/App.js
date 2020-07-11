@@ -8,6 +8,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
 
 export default class App extends React.Component {
   constructor() {
@@ -39,11 +40,17 @@ export default class App extends React.Component {
     return (
       <View style={styles.item}>
         <TouchableOpacity>
-          <ImageBackground
-            source={{ uri: item.download_url }}
-            style={styles.itemImage}>
-            <Text style={styles.itemText}>{item.author}</Text>
-          </ImageBackground>
+          <LinearGradient
+            colors = {["#ebf7ff", "#8d9499", "#ebf7ff"]}
+            start = {{x: 0, y: 0}}
+            end = {{x: 1, y: 1}}
+            style={styles.gradient}>
+            <ImageBackground
+              source={{ uri: item.download_url }}
+              style={styles.itemImage}>
+              <Text style={styles.itemText}>{item.author}</Text>
+            </ImageBackground>
+          </LinearGradient>
         </TouchableOpacity>
       </View>
     )
@@ -97,13 +104,14 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   itemImage: {
-    height: 200,
+    height: "100%",
+    width: "100%",
     resizeMode: 'cover',
-    borderRadius: 10,
-    margin: 15,
-    position: "relative",
+    borderRadius: 10,    
     overflow: "hidden",
-    backgroundColor: "#ebf7ff",
+    position: "absolute",
+    top: 0,
+    backgroundColor: "transparent"
   },
   itemText: {
     fontSize: 10,
@@ -116,5 +124,11 @@ const styles = StyleSheet.create({
     color: "white",
     backgroundColor: "#000",
     opacity: .5,
+  },
+  gradient: {
+    height: 200,
+    margin: 15,    
+    borderRadius: 10,
+    position: "relative"
   }
 });
