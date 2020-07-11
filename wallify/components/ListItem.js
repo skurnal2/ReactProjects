@@ -17,33 +17,46 @@ export class ListItem extends React.Component {
         animatePress: new Animated.Value(1)
     }
 
-    animate() {
+    animateIn() {
         Animated.timing(this.state.animatePress, {
-            toValue: 0.8,
-            duration: 500
+            toValue: 0.85,
+            duration: 150,
+            useNativeDriver: true,
+        }).start()
+    }
+
+    animateOut() {
+        Animated.timing(this.state.animatePress, {
+            toValue: 1,
+            duration: 200,
+            useNativeDriver: true,
         }).start()
     }
 
     render() {
         return (
-            <TouchableWithoutFeedback onPress={() => this.animate()}>
+            <TouchableWithoutFeedback
+            
+                onPressIn={() => this.animateIn()}
+                onPressOut={() => this.animateOut()}
+            >
                 <Animated.View style={[styles.parentView, {
                     transform: [{scale: this.state.animatePress}]
                 }]}
                 
                 >
-                <LinearGradient
+                {/* <LinearGradient
                     colors={["#ebf7ff", "#8d9499", "#ebf7ff"]}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
                     style={styles.gradient}
-                 >
+                 > */}
                     <ImageBackground
                         source={{ uri: this.props.item.download_url }}
                         style={styles.itemImage}>
                         <Text style={styles.itemText}>{this.props.item.author}</Text>
                     </ImageBackground>
-                </LinearGradient>
+                {/* </LinearGradient> */}
                 </Animated.View>
             </TouchableWithoutFeedback>
         );
@@ -59,7 +72,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         position: "absolute",
         top: 0,
-        backgroundColor: "transparent"
+        backgroundColor: "#636363"
     },
     itemText: {
         fontSize: 10,
@@ -84,7 +97,7 @@ const styles = StyleSheet.create({
         height: 200,
         margin: 15,
         borderRadius: 10,
-        backgroundColor: '#e3e3e3'
+        
     }
 });
 
