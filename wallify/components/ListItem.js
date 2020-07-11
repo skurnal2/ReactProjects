@@ -9,7 +9,7 @@ import {
     TouchableWithoutFeedback,
     Animated
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
+import LinearGradient from 'react-native-linear-gradient';
 
 export class ListItem extends React.Component {
 
@@ -31,12 +31,15 @@ export class ListItem extends React.Component {
             duration: 200,
             useNativeDriver: true,
         }).start();
+
+        this.props.navigation.navigate('Detail', {
+            item: this.props.item,
+        });
     }
 
     render() {
         return (
-            <TouchableWithoutFeedback
-                onPress={() => this.props.navigation.navigate('Detail')}
+            <TouchableWithoutFeedback                
                 onPressIn={() => this.animateIn()}
                 onPressOut={() => this.animateOut()}
             >
