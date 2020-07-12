@@ -4,7 +4,9 @@ import {
     Text,
     ImageBackground,
     View,
-    TouchableOpacity,    
+    TouchableOpacity,
+    ToastAndroid,
+    Alert
 } from 'react-native';
 import { colorsFromUrl } from 'react-native-dominant-color';
 import ManageWallpaper, { TYPE } from 'react-native-manage-wallpaper';
@@ -31,14 +33,31 @@ class List extends React.Component {
     }
 
     setWallify() {
-        ManageWallpaper.setWallpaper(
-            {
-              uri: this.state.image,
-            },
-            this._callback,
-            TYPE.HOME,
-          );
-          console.log("I'm Here!");
+
+        Alert.alert(
+            "Confirmation",
+            "Do you want to set this image as your wallpaper?",
+            [
+                {
+                    text: "No"
+                },
+                {
+                    text: "Yes", onPress: () => {
+                        ManageWallpaper.setWallpaper(
+                            {
+                                uri: this.state.image,
+                            },
+                            this._callback,
+                            TYPE.HOME,
+                        );
+
+                        ToastAndroid.show("Wallpaper Set !", ToastAndroid.SHORT);
+                    }
+                }
+            ],
+            { cancelable: false }
+        );
+
     };
 
     render() {
@@ -58,7 +77,7 @@ class List extends React.Component {
                         }
                     ]}>
                         <Text style={styles.itemText}>{item.author}</Text>
-                        <TouchableOpacity style={[styles.link,{backgroundColor: this.state.color}]}
+                        <TouchableOpacity style={[styles.link, { backgroundColor: this.state.color }]}
                             onPress={() => this.setWallify()}
                         >
                             <Text style={styles.linkText}>Set Wallpaper</Text>
