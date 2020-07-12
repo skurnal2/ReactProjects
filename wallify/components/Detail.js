@@ -7,7 +7,7 @@ import {
     TouchableOpacity,    
 } from 'react-native';
 import { colorsFromUrl } from 'react-native-dominant-color';
-
+import ManageWallpaper, { TYPE } from 'react-native-manage-wallpaper';
 
 class List extends React.Component {
     constructor() {
@@ -30,9 +30,16 @@ class List extends React.Component {
         });
     }
 
-    setWallify = () => {
-        console.log('hello');
-    }
+    setWallify() {
+        ManageWallpaper.setWallpaper(
+            {
+              uri: this.state.image,
+            },
+            this._callback,
+            TYPE.HOME,
+          );
+          console.log("I'm Here!");
+    };
 
     render() {
         const item = this.props.route.params.item;
@@ -52,7 +59,7 @@ class List extends React.Component {
                     ]}>
                         <Text style={styles.itemText}>{item.author}</Text>
                         <TouchableOpacity style={[styles.link,{backgroundColor: this.state.color}]}
-                            onPress={() => this.setWallify}
+                            onPress={() => this.setWallify()}
                         >
                             <Text style={styles.linkText}>Set Wallpaper</Text>
                         </TouchableOpacity>
