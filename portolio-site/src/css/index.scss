@@ -198,7 +198,8 @@ main {
         z-index: 50;
 
         &:nth-of-type(1) {
-            background-color: $color2;
+            // background-color: $color2;
+            background: linear-gradient(0.45turn,rgba(0,0,0,0), $color2);
             height: 21vw;
             width: 21vw;
             top: 0;
@@ -208,7 +209,8 @@ main {
         }
 
         &:nth-of-type(2) {
-            background-color: $color3;
+            // background-color: $color3;
+            background: linear-gradient(0.45turn,rgba(0,0,0,0), $color3);
             height: 35vw;
             width: 35vw;
             top: 5rem;
