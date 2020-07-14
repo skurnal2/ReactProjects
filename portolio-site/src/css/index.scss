@@ -203,6 +203,8 @@ main {
             width: 21vw;
             top: 0;
             left: 15vw;
+            animation: circle-up-down 3s ease-in-out infinite;
+            animation-delay: 2s;
         }
 
         &:nth-of-type(2) {
@@ -211,8 +213,15 @@ main {
             width: 35vw;
             top: 5rem;
             left: 28vw;
+            animation: circle-up-down 2.5s ease-in-out infinite;
+            animation-delay: 2s;
         }
 
+        @keyframes circle-up-down {
+            50% {
+                transform: translateY(-4vh);
+            }
+        }
 
     }
 }

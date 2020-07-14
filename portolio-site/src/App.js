@@ -13,7 +13,7 @@ class App extends React.Component {
 
   componentDidMount() {
     gsap.from(".nav-links a", {duration: 1, opacity: 0, y: -150, stagger: -0.25});
-    gsap.from(".circle", {duration: 2.5, opacity: 0, y: -250, stagger: .3, ease: "elastic"});
+    gsap.from(".circle", {duration: 2.5, opacity: 0, y: -250, stagger: .3, ease: "elastic"});        
   }
 
   render() {
