@@ -13,6 +13,7 @@ class App extends React.Component {
 
   componentDidMount() {
     gsap.from(".nav-links a", {duration: 1, opacity: 0, y: -150, stagger: -0.25});
+    gsap.from(".circle", {duration: 2, opacity: 0, y: -250, stagger: .3, ease: "elastic"});
   }
 
   render() {
@@ -32,15 +33,11 @@ class App extends React.Component {
         </nav>
         <main>
           <div id="name-container">
-            <h2>
-              Siddharth
-            </h2>            
-            <h2>
-              Kurnal
-            </h2>
-            <h3>
-              WEB / MOBILE DEVELOPER
-            </h3>
+            <h2>SIDDHARTH</h2>            
+            <h2>KURNAL</h2>
+            <h3>WEB / MOBILE DEVELOPER</h3>
+            <div class="circle"/>
+            <div class="circle"/>
           </div>
         </main>
         <div class="heading">

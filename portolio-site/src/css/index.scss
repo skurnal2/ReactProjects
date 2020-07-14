@@ -6,8 +6,8 @@
 //Colors
 
 $color1: #492B7C;
-$color2: #46344E;
-$color3: #5A5560;
+$color2: #ED8A0A;
+$color3: #F6D912;
 $color4: #9D8D8F;
 $color5: #9B786F;
 
@@ -151,12 +151,68 @@ main {
 
 #name-container {
     position: relative;
+    height: 100%;
+    width: 100%;
     font-family: $font2;
-    color: white;
+    color: white;    
 
     h2 {
-        border: 5px solid $color1;
-        font-size: 9.2rem;
+        -webkit-text-stroke: 5px $color1;
+        font-size: 12rem;
+        position: absolute;
+        font-weight: normal;
+        font-style: normal;
+        width: 100%;
+        z-index: 100;
+
+        &:first-child {
+           top: 0;     
+           text-align: left;  
+           padding-left: 12rem;
+        }
+
+        &:nth-child(2) {
+            top: 14rem;
+            text-align: right;
+            padding-right: 23rem;
+        }
+    }
+
+    h3 {
+        -webkit-text-stroke: 5px $color1;
+        font-size: 5rem;
+        position: absolute;
+        font-weight: normal;
+        font-style: normal;
+        width: 100%;
+        text-align: center;
+        top: 28rem;
+        padding-right: 15rem;
+        z-index: 100;
+    }
+
+    .circle {                
+        position: absolute;               
+        border-radius: 50%;
+        z-index: 50;
+
+        &:nth-of-type(1) {
+            background-color: $color2;
+            height: 28rem;
+            width: 28rem;
+            top: 0;
+            left: 22rem;
+        }
+
+        &:nth-of-type(2) {
+            background-color: $color3;
+            height: 45rem;
+            width: 45rem;
+            top: 5rem;
+            left: 42rem;
+        }
+
+
     }
 }
 
@@ -190,4 +246,8 @@ main {
     main {
         display: block;
     }
+}
+
+@media only screen and (max-width: 1024px) {
+
 }
