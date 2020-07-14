@@ -1,15 +1,26 @@
 import React from 'react';
 
+//Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {  } from "@fortawesome/free-solid-svg-icons";
+import {faGithub} from '@fortawesome/free-brands-svg-icons' 
+
+library.add(faGithub);
+
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <nav>
         <h1>Siddharth Kurnal</h1>
         <div class="nav-links">
           <a href="#">Home</a>
           <a href="#">Projects</a>
-          <a href="#">GitHub</a>
+          <a href="#"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
           <a href="#">Contact</a>
+          <div className="nav-menu-button">
+            MENU
+          </div>
         </div>
       </nav>
       <main>

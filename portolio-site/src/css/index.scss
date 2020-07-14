@@ -2,13 +2,13 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
 
 //Colors
-$colors: (
-    purple: #492b7c,
-    dark-purple: #301551,
-    orange: #ed8a0a,
-    yellow: #f6d912,
-    faded-yellow: #fff29c
-);
+
+$color1: #FAED26;
+$color2: #46344E;
+$color3: #5A5560;
+$color4: #9D8D8F;
+$color5: #9B786F;
+
 
 //Variables
 $heading_font: 'Roboto Slab', serif;
@@ -28,7 +28,7 @@ $heading_font: 'Roboto Slab', serif;
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr 1fr 4fr 3fr;
+    grid-template-rows: 2fr 3fr 1fr 4fr 3fr;
     grid-template-areas: 
         "nav nav nav nav"
         "main main main main"
@@ -44,8 +44,8 @@ main { grid-area: main; }
 .projects { grid-area: projects; }
 footer { grid-area: footer; }
 
-//MEDIA QUERY FOR MOBILE
-@media only screen and (max-width: 800px) {
+//MEDIA QUERY FOR MOBILE LAYOUT
+@media only screen and (max-width: 1024px) {
     .container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr 1fr 4fr 3fr;
@@ -57,8 +57,16 @@ footer { grid-area: footer; }
         "footer";    
     }
 
+    .nav-links a {
+        display: none;
+    }
+
     .project-sub-links {
         display: none;
+    }
+
+    .nav-menu-button {
+        display: block;
     }
 }
 
@@ -69,21 +77,24 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: map-get($map: $colors, $key: purple);
+    background-color: $color2;
+}
+
+nav h1 {
+    color: white;
 }
 
 .nav-links {
     display: flex;
     justify-content: space-evenly;
     width: 50%;
+    margin-right: 5%;
 }
 
 .nav-links a {
     text-decoration: none;
-    background-color: map-get($map: $colors, $key: yellow);
-    padding: .2rem;
-    border-radius: .4rem;
-    color: map-get($map: $colors, $key: purple);
+    padding: .4rem;
+    color: white;
 }
 
 nav h1 {
@@ -91,9 +102,55 @@ nav h1 {
     text-align: center;    
 }
 
+.nav-menu-button {
+    display: none;
+}
+
+.github-symbol {
+    margin-right: .5rem;
+}
+
 // MAIN
 main {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    background-color: $color1;
+    padding: 2rem;
+}
+
+#name-container {
+    flex: 1;
+    text-align: center;
+}
+
+#about-me {
+    flex: 1;
+}
+
+//Heading
+.heading {
+    background-color: $color2;
+}
+
+//MEDIA QUERY FOR MOBILE ITEMS
+@media only screen and (max-width: 1024px) {
+
+    //NAV
+    .nav-links a {
+        display: none;
+    }
+
+    .project-sub-links {
+        display: none;
+    }
+
+    .nav-menu-button {
+        display: inline-block;        
+    }
+
+    .nav-links {
+        justify-content: flex-end;
+    }
 }
