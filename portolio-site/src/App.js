@@ -1,24 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+      <nav>
+        <logo>Siddharth Kurnal</logo>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Projects</a>
+          <a href="#">GitHub</a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
+      <main>
+        <div id="name-container">
+          <h1>
+            Siddharth
+          </h1>
+        </div>
+        <div id="about-me">
+          <h2>About Me</h2>
+          <div>
+            Consequat quis aute reprehenderit dolor aliquip anim deserunt velit id ut voluptate. Pariatur esse occaecat reprehenderit deserunt aliquip voluptate mollit ex incididunt quis consectetur reprehenderit. In exercitation officia do id. Non cupidatat exercitation cillum culpa aliqua.
+          </div>
+        </div>
+      </main>
+      <div class="heading">
+        <h2>
+          My Projects
+        </h2>
+      </div>
+      <div class="project-sub-links">
+        <ul>
+          <li>Sunshine Meme Generator</li>
+          <li>Geo Covid</li>
+          <li>Highway Dodge</li>
+          <li>BeeChat</li>
+          <li>LaptopCatalog</li>
+          <li>Wallify</li>
+          <li>LAAutoDetailing</li>
+        </ul>
+      </div>
+      <div class="projects">Projects</div>
+      <footer>Footer</footer>
     </div>
   );
 }
