@@ -55,7 +55,7 @@ footer { grid-area: footer; }
 @media only screen and (max-width: 1024px) {
     .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 50vh 1fr 4fr 3fr;
+    grid-template-rows: 55vh 1fr 4fr 3fr;
     grid-template-areas: 
         "main"
         "heading"
@@ -147,6 +147,7 @@ main {
     align-items: center;
     background-color: $color1;
     padding: 2rem;
+    transition: .2s;
 }
 
 #name-container {
@@ -158,7 +159,7 @@ main {
 
     h2 {
         -webkit-text-stroke: 5px $color1;
-        font-size: 12rem;
+        font-size: 10vw;
         position: absolute;
         font-weight: normal;
         font-style: normal;
@@ -168,26 +169,26 @@ main {
         &:first-child {
            top: 0;     
            text-align: left;  
-           padding-left: 12rem;
+           padding-left: 3.5vw;
         }
 
         &:nth-child(2) {
-            top: 14rem;
+            top: 18vh;
             text-align: right;
-            padding-right: 23rem;
+            padding-right: 14vw;
         }
     }
 
     h3 {
-        -webkit-text-stroke: 5px $color1;
-        font-size: 5rem;
+        -webkit-text-stroke: 3px $color1;
+        font-size: 5vw;
         position: absolute;
         font-weight: normal;
         font-style: normal;
         width: 100%;
         text-align: center;
-        top: 28rem;
-        padding-right: 15rem;
+        top: 42vh;
+        padding-right: 15vw;
         z-index: 100;
     }
 
@@ -198,18 +199,18 @@ main {
 
         &:nth-of-type(1) {
             background-color: $color2;
-            height: 28rem;
-            width: 28rem;
+            height: 21vw;
+            width: 21vw;
             top: 0;
-            left: 22rem;
+            left: 15vw;
         }
 
         &:nth-of-type(2) {
             background-color: $color3;
-            height: 45rem;
-            width: 45rem;
+            height: 35vw;
+            width: 35vw;
             top: 5rem;
-            left: 42rem;
+            left: 28vw;
         }
 
 
@@ -245,6 +246,53 @@ main {
     //MAIN
     main {
         display: block;
+    }
+
+    #name-container {
+        h2 {
+            // font-size: 7rem;  
+            -webkit-text-stroke: 2px $color1;          
+    
+            &:first-child {
+            
+               text-align: left;  
+            //    padding-left: 0;
+            }
+    
+            &:nth-child(2) {
+                // top: 14rem;
+                top: 10vh;
+                text-align: right;
+                // padding-right: 0;
+            }
+        }
+    
+        h3 {
+            // font-size: 5rem;
+            // top: 28rem;
+            // padding-right: 15rem;
+            -webkit-text-stroke: 1.5px $color1;
+            top: 23vh;
+        }
+    
+        .circle {     
+                
+            &:nth-of-type(1) {
+                top: -5vh;
+                // left: 5rem;
+                width: 28vw;
+                height: 28vw;
+            }
+    
+            &:nth-of-type(2) {
+                top: 4vh;
+                // left: 10rem;
+                width: 45vw;
+                height: 45vw;
+            }
+    
+    
+        }
     }
 }
 
