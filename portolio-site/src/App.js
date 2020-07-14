@@ -5,15 +5,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { gsap } from 'gsap/all';
+import { gsap, ScrollTrigger } from 'gsap/all';
 
 library.add(faGithub, faBars);
 
 class App extends React.Component {
 
-  componentDidMount() {
+  gsapFunctions() {
     gsap.from(".nav-links a", {duration: 1, opacity: 0, y: -150, stagger: -0.25});
-    gsap.from(".circle", {duration: 2.5, opacity: 0, y: -250, stagger: .3, ease: "elastic"});        
+    gsap.from(".circle", {duration: 4, opacity: 0, y: -250, stagger: .3, ease: "elastic"});        
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".first-h2", {
+      scrollTrigger: {
+        trigger: "nav",
+        start: "top",
+        end: "600px 10px",
+        scrub: true,
+      },      
+      x: 400,
+      duration: 35
+    });
+    gsap.to(".second-h2", {
+      scrollTrigger: {
+        trigger: "nav",
+        start: "top",
+        end: "600px 10px",
+        scrub: true,
+      },      
+      x: -400,
+      duration: 35
+    });
+  }
+
+  componentDidMount() {
+    this.gsapFunctions();
   }
 
   render() {
@@ -33,8 +58,8 @@ class App extends React.Component {
         </nav>
         <main>
           <div id="name-container">
-            <h2>SIDDHARTH</h2>            
-            <h2>KURNAL</h2>
+            <h2 className="first-h2">SIDDHARTH</h2>            
+            <h2 className="second-h2">KURNAL</h2>
             <h3>WEB / MOBILE DEVELOPER</h3>
             <div class="circle"/>
             <div class="circle"/>
