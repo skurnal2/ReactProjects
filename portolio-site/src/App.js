@@ -3,17 +3,16 @@ import React from 'react';
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { gsap } from 'gsap/all';
 
-library.add(faGithub);
+library.add(faGithub, faBars);
 
 class App extends React.Component {
 
   componentDidMount() {
-    gsap.from(".nav-links a", {duration: 1, opacity: 0, y: -150, stagger: 0.25});
-  
+    gsap.from(".nav-links a", {duration: 1, opacity: 0, y: -150, stagger: -0.25});
   }
 
   render() {
@@ -27,21 +26,21 @@ class App extends React.Component {
             <a href="#"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
             <a href="#">Contact</a>
             <div className="nav-menu-button">
-              MENU
-          </div>
+              <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
+            </div>
           </div>
         </nav>
         <main>
           <div id="name-container">
-            <h1>
-              Siddharth Kurnal
-          </h1>
-          </div>
-          <div id="about-me">
-            <h2>About Me</h2>
-            <div>
-              Consequat quis aute reprehenderit dolor aliquip anim deserunt velit id ut voluptate. Pariatur esse occaecat reprehenderit deserunt aliquip voluptate mollit ex incididunt quis consectetur reprehenderit. In exercitation officia do id. Non cupidatat exercitation cillum culpa aliqua.
-          </div>
+            <h2>
+              Siddharth
+            </h2>            
+            <h2>
+              Kurnal
+            </h2>
+            <h3>
+              WEB / MOBILE DEVELOPER
+            </h3>
           </div>
         </main>
         <div class="heading">
