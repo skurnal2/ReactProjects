@@ -1,6 +1,7 @@
 //Fonts
 @import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Righteous&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap);
 
 
 //Colors
@@ -8,13 +9,14 @@
 $color1: #492B7C;
 $color2: #ED8A0A;
 $color3: #F6D912;
-$color4: #9D8D8F;
+$color4: #37225a;
 $color5: #9B786F;
 
 
 //Fonts
 $font1: 'Racing Sans One', serif;
 $font2: 'Righteous', cursive;
+$font3: 'Rubik Mono One', sans-serif;
 
 * {
     margin: 0;
@@ -29,7 +31,7 @@ $font2: 'Righteous', cursive;
     display: grid;
     height: 400vh; //REMOVE THIS
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100vh 1fr 4fr 3fr;
+    grid-template-rows: 100vh auto auto auto;
     grid-template-areas: 
         "main main main main"
         "services services services services"
@@ -57,11 +59,11 @@ main {
 .projects { grid-area: projects; }
 footer { grid-area: footer; }
 
-//MEDIA QUERY FOR MOBILE LAYOUT
+//MEDIA QUERY FOR MOBILE/TABLET LAYOUT
 @media only screen and (max-width: 1024px) {
     .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 55vh 1fr 4fr 3fr;
+    grid-template-rows: 55vh auto auto auto;
     grid-template-areas: 
         "main"
         "services"
@@ -237,12 +239,45 @@ main {
 
 //Services
 .services {
-    background: linear-gradient(to bottom, $color1, $color2);
-
+    background-color: $color4;
+    // background: linear-gradient(to bottom, $color1, $color4, $color1);
+    // -webkit-box-shadow: inset 0px 10px 30px -8px rgba(0,0,0,0.75);
+    // -moz-box-shadow: inset 0px 10px 30px -8px rgba(0,0,0,0.75);
+    // box-shadow: inset 0px 10px 30px -8px rgba(0,0,0,0.75);
+    
     h4 {
         font-family: $font1;
-        font-size: 3vw;
+        font-size: 4vw;        
+        font-weight: normal;
+        padding: 1rem 2vw; 
+        color: $color1;                        
+    }  
+
+    .services-container { 
+        padding: 0 2vw 2vh 0;
+        font-family: $font3;
+        text-align: center;
+
+        span {
+            font-size: 4vw;            
+            display: inline-block; 
+            // -webkit-text-stroke: 2px $color1;   
+            font-style: normal;
+            font-weight: normal;         
+            margin-left: 2vw;
+            word-spacing: -1rem;
+            
+            &:nth-child(even) {                
+                color: $color3;
+            }
+
+            &:nth-child(odd) {                
+                color: white;;
+            }
+        }
+
     }
+
 }
 
 //MEDIA QUERY FOR MOBILE ITEMS
@@ -316,8 +351,39 @@ main {
     
         }
     }
+
+    //Services
+    .services {
+        h4 {
+            font-size: 3vw;
+        }
+
+        .services-container {
+            span {
+                word-spacing: -.5rem;                
+            }
+        }
+    }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
+    //Services
+    .services {
+        margin-top: -7vh;
 
+        h4 {
+            font-size: 5vw;
+        } 
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    //Services
+    .services {
+        h4 {
+            font-size: 5vw;
+        }
+
+
+    }
 }

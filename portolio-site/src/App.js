@@ -65,22 +65,22 @@ class App extends React.Component {
             <div className="circle"/>
           </div>
         </main>
-        <div class="services">
+        <div className="services">
           <h4>I can help you with</h4>
           <div className="services-container">
-            <span>Web Development</span>
-            <span>Web Design</span>
-            <span>Mobile Development</span>
-            <span>UX</span>
-            <span>QA</span>
-            <span>Database</span>
-            <span>Wordpress</span>
-            <span>Testing</span>
-            <span>System Analysis</span>
-            <span>Prototyping</span>
+            <span className="span-row-1">Web Development</span>
+            <span className="span-row-1">Web Design</span>
+            <span className="span-row-2">Mobile Development</span>
+            <span className="span-row-2">UX</span>
+            <span className="span-row-2">QA</span>
+            <span className="span-row-3">Database</span>
+            <span className="span-row-3">Wordpress</span>
+            <span className="span-row-3">Testing</span>
+            <span className="span-row-4">System Analysis</span>
+            <span className="span-row-4">Prototyping</span>
           </div>
         </div>
-        <div class="project-sub-links">
+        <div className="project-sub-links">
           <ul>
             <li>Sunshine Meme Generator</li>
             <li>Geo Covid</li>
@@ -91,7 +91,7 @@ class App extends React.Component {
             <li>LAAutoDetailing</li>
           </ul>
         </div>
-        <div class="projects">Projects</div>
+        <div className="projects">Projects</div>
         <footer>Footer</footer>
       </div>
     );
