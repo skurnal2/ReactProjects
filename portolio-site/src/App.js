@@ -61,14 +61,24 @@ class App extends React.Component {
             <h2 className="first-h2">SIDDHARTH</h2>            
             <h2 className="second-h2">KURNAL</h2>
             <h3>WEB / MOBILE DEVELOPER</h3>
-            <div class="circle"/>
-            <div class="circle"/>
+            <div className="circle"/>
+            <div className="circle"/>
           </div>
         </main>
-        <div class="heading">
-          <h2>
-            My Projects
-        </h2>
+        <div class="services">
+          <h4>I can help you with</h4>
+          <div className="services-container">
+            <span>Web Development</span>
+            <span>Web Design</span>
+            <span>Mobile Development</span>
+            <span>UX</span>
+            <span>QA</span>
+            <span>Database</span>
+            <span>Wordpress</span>
+            <span>Testing</span>
+            <span>System Analysis</span>
+            <span>Prototyping</span>
+          </div>
         </div>
         <div class="project-sub-links">
           <ul>

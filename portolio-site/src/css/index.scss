@@ -32,7 +32,7 @@ $font2: 'Righteous', cursive;
     grid-template-rows: 100vh 1fr 4fr 3fr;
     grid-template-areas: 
         "main main main main"
-        "heading heading heading heading"
+        "services services services services"
         "sub-links projects projects projects"
         "footer footer footer footer"; 
     overflow: hidden;   
@@ -52,7 +52,7 @@ main {
     grid-area: main; 
     margin-top: 8rem;
 }
-.heading { grid-area: heading; }
+.services { grid-area: services; }
 .project-sub-links { grid-area: sub-links; }
 .projects { grid-area: projects; }
 footer { grid-area: footer; }
@@ -64,7 +64,7 @@ footer { grid-area: footer; }
     grid-template-rows: 55vh 1fr 4fr 3fr;
     grid-template-areas: 
         "main"
-        "heading"
+        "services"
         "projects"
         "footer";    
     }
@@ -235,9 +235,14 @@ main {
 }
 
 
-//Heading
-.heading {
-    background-color: $color2;
+//Services
+.services {
+    background: linear-gradient(to bottom, $color1, $color2);
+
+    h4 {
+        font-family: $font1;
+        font-size: 3vw;
+    }
 }
 
 //MEDIA QUERY FOR MOBILE ITEMS
