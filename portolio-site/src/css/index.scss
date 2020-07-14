@@ -1,6 +1,15 @@
 //Fonts
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
 
+//Colors
+$colors: (
+    purple: #492b7c,
+    dark-purple: #301551,
+    orange: #ed8a0a,
+    yellow: #f6d912,
+    faded-yellow: #fff29c
+);
+
 //Variables
 $heading_font: 'Roboto Slab', serif;
 
@@ -18,7 +27,6 @@ $heading_font: 'Roboto Slab', serif;
 //DESKTOP
 .container {
     display: grid;
-    height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr 4fr 3fr;
     grid-template-areas: 
@@ -29,35 +37,12 @@ $heading_font: 'Roboto Slab', serif;
         "footer footer footer footer";    
 }
 
-nav {
-    background: #a7ffeb;
-    grid-area: nav;
-}
-
-main {
-    background: red;
-    grid-area: main;
-}
-
-.heading {
-    background-color: green;
-    grid-area: heading;
-}
-
-.project-sub-links {
-    background-color: yellowgreen;
-    grid-area: sub-links;
-}
-
-.projects {
-    background-color: blue;
-    grid-area: projects;
-}
-
-footer {
-    background-color: darkmagenta;
-    grid-area: footer;
-}
+nav { grid-area: nav; }
+main { grid-area: main; }
+.heading { grid-area: heading; }
+.project-sub-links { grid-area: sub-links; }
+.projects { grid-area: projects; }
+footer { grid-area: footer; }
 
 //MEDIA QUERY FOR MOBILE
 @media only screen and (max-width: 800px) {
@@ -78,3 +63,37 @@ footer {
 }
 
 //LAYOUT END -----------------------------------------------
+
+// NAV
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: map-get($map: $colors, $key: purple);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    background-color: map-get($map: $colors, $key: yellow);
+    padding: .2rem;
+    border-radius: .4rem;
+    color: map-get($map: $colors, $key: purple);
+}
+
+nav h1 {
+    width: 50%;
+    text-align: center;    
+}
+
+// MAIN
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

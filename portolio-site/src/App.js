@@ -4,7 +4,7 @@ function App() {
   return (
     <div class="container">
       <nav>
-        <logo>Siddharth Kurnal</logo>
+        <h1>Siddharth Kurnal</h1>
         <div class="nav-links">
           <a href="#">Home</a>
           <a href="#">Projects</a>
@@ -15,7 +15,7 @@ function App() {
       <main>
         <div id="name-container">
           <h1>
-            Siddharth
+            Siddharth Kurnal
           </h1>
         </div>
         <div id="about-me">
