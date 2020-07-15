@@ -16,8 +16,8 @@ class App extends React.Component {
 
     this.state = {
       isOpen: false,
-      zIndex: "300",
-      opacity: "1"
+      zIndex: "-100",
+      opacity: "0"
     }
   }
 
@@ -55,41 +55,33 @@ class App extends React.Component {
             end: "600px 10px",
             scrub: true,
           },
-          x: 100,
-          duration: 10
+          x: 150,
+          duration: 11
         });
         gsap.from(".span-row-2, .span-row-4", {
           scrollTrigger: {
             trigger: "nav",
-            start: "bottom",
-            end: "1000px",
+            start: "top",
+            end: "600px 10px",
             scrub: true,
           },
-          x: -100,
-          duration: 10,
+          x: -150,
+          duration: 11,
         });
       },
 
       "(max-width: 1024px)": function () {
-        gsap.to(".span-row-1, .span-row-3", {
-          scrollTrigger: {
-            trigger: "main",
-            start: "bottom",
-            end: "600px 10px",
-            scrub: true,
-          },
-          x: 15,
-          duration: 5
+        gsap.from(".span-row-1, .span-row-3", {
+          duration: 1,
+          scale: .5,
+          stagger: .25,
+          opacity: 0
         });
-        gsap.to(".span-row-2, .span-row-4", {
-          scrollTrigger: {
-            trigger: "main",
-            start: "bottom",
-            end: "1000px",
-            scrub: true,
-          },
-          x: -20,
-          duration: 5,
+        gsap.from(".span-row-2, .span-row-4", {
+          duration: .75,
+          scale: .5,
+          stagger: -.25,
+          opacity: 0
         });
       }
 
@@ -128,9 +120,6 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="full-menu-wrapper"  style={menuStyle}>
-          <div className="nav-menu-button-inner" onClick={() => this.handleMenu()}>
-          <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
-        </div>
         </div>
         <nav>
           <h1>Siddharth Kurnal</h1>
@@ -138,12 +127,12 @@ class App extends React.Component {
             <a href="#">Home</a>
             <a href="#">Projects</a>
             <a href="#"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
-            <a href="#">Contact</a>
-            <div className="nav-menu-button" onClick={() => this.handleMenu()}>
-              <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
-            </div>
+            <a href="#">Contact</a>            
           </div>
         </nav>
+        <div className="nav-menu-button" onClick={() => this.handleMenu()}>
+              <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
+        </div>
         <main>
           <div id="name-container">
             <h2 className="first-h2">SIDDHARTH</h2>
