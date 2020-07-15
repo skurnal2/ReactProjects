@@ -119,7 +119,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <div className="full-menu-wrapper"  style={menuStyle}>
+        <div className="full-menu-wrapper" style={menuStyle}>
         </div>
         <nav>
           <h1>Siddharth Kurnal</h1>
@@ -127,11 +127,11 @@ class App extends React.Component {
             <a href="#">Home</a>
             <a href="#">Projects</a>
             <a href="#"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
-            <a href="#">Contact</a>            
+            <a href="#">Contact</a>
           </div>
         </nav>
         <div className="nav-menu-button" onClick={() => this.handleMenu()}>
-              <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
+          <FontAwesomeIcon className="menu-symbol" icon={['fa', 'bars']} />
         </div>
         <main>
           <div id="name-container">
