@@ -126,7 +126,7 @@ class App extends React.Component {
           <div className="nav-links">
             <a href="#">Home</a>
             <a href="#">Projects</a>
-            <a href="#"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
+            <a href="http://github.com/skurnal2"><FontAwesomeIcon className="github-symbol" icon={['fab', 'github']} />GitHub</a>
             <a href="#">Contact</a>
           </div>
         </nav>
