@@ -33,10 +33,10 @@ $font3: 'Rubik Mono One', sans-serif;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 100vh auto auto auto auto;
     grid-template-areas: 
-        "main main main main"        
+        "main main main main"
         "services services services services"
-        "skills skills skills skills"
-        "sub-links projects projects projects"
+        "projects projects projects projects"
+        "skills skills skills skills"        
         "footer footer footer footer"; 
     overflow: hidden;   
 }
@@ -48,8 +48,8 @@ nav {
     height: 8rem;
     z-index: 150;    
     background: #492b7c5b;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px)blur(10px);
+    backdrop-filter: blur(10px)blur(10px); 
 }
 main { 
     grid-area: main; 
@@ -57,7 +57,6 @@ main {
 }
 .services { grid-area: services; }
 .skills { grid-area: skills; }
-.project-sub-links { grid-area: sub-links; }
 .projects { grid-area: projects; }
 footer { grid-area: footer; }
 
@@ -71,8 +70,8 @@ footer { grid-area: footer; }
     width: 100vw;
     height: 100vh;
     background: #492b7c5b;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(10px)blur(12px);
+    backdrop-filter: blur(10px)blur(12px);
     transition: .5s;    
 }
 
@@ -84,8 +83,8 @@ footer { grid-area: footer; }
     grid-template-areas: 
         "main"
         "services"
-        "skills"
         "projects"
+        "skills"        
         "footer";    
     }
 
@@ -98,10 +97,6 @@ footer { grid-area: footer; }
     }
 
     .nav-links a {
-        display: none;
-    }
-
-    .project-sub-links {
         display: none;
     }
 
@@ -302,6 +297,79 @@ main {
 
 }
 
+//Projects
+.projects {
+    .projects-inner {
+        background: linear-gradient(180deg, $color3 0%, $color1 100%);
+        padding: 1rem 2vw;
+        margin: 1rem;
+        border-radius: 15px;
+
+        h4 {
+            font-family: $font1;
+            font-size: 4vw;
+            font-weight: normal;        
+        }
+
+        .projects-container{    
+            text-align: center;
+            
+            & > div {
+                transition: .5s;
+                display: inline-block;   
+                height: 15rem; 
+                width: 30%;   
+                border-radius: 1rem;         
+                margin: .5rem;
+                background-color: $color4;                
+                position: relative;
+                overflow: hidden;    
+                cursor: pointer;            
+
+                img {
+                    
+                    left: 0;
+                    top: 0;      
+                    background-size: cover;              
+                    width: 100%;
+                    transition: .5s;                                        
+                }
+
+                &:hover {
+                    img {
+                        width: 110%;
+                        left: -1rem;
+                        top: -.5rem;
+                    }
+                }
+
+                div {
+                    position: absolute;
+                    bottom: 0;
+                    right: -.5rem;
+                    padding: 1rem;
+                    padding-right: 1.1rem;
+                    border-top-left-radius: 1rem;                    
+                    font-family: $font1;
+                    font-size: 1.7vw;
+                    transition: .4s;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    // backdrop-filter: blur(10px);
+                    color: white;                    
+                }
+
+                &:hover {
+                    div {
+                        bottom: -1rem;
+                        padding-bottom: 3.2rem;                                         
+                    }
+                }
+            }            
+        }        
+
+    }    
+}
+
 //Skills
 .skills {
     h4 {
@@ -340,15 +408,11 @@ main {
     }
 }
 
-//MEDIA QUERY FOR MOBILE ITEMS
+//MEDIA QUERY FOR MOBILE ITEMS -----------------------------------
 @media only screen and (max-width: 1024px) {
 
     //NAV
     .nav-links a {
-        display: none;
-    }
-
-    .project-sub-links {
         display: none;
     }
 
@@ -425,6 +489,26 @@ main {
         }
     }
 
+    //Projects
+    .projects {
+        .projects-inner {
+            h4 {
+             font-size: 3vw;       
+            }
+
+            .projects-container{               
+                & > div {  
+                    height: 9rem; 
+                    width: 45%;   
+                    
+                    div {
+                        font-size: 2.8vw;
+                    }
+                }
+            }
+       }
+    }
+
     //Skills
     .skills {
         h4 {
@@ -455,6 +539,26 @@ main {
         h4 {
             font-size: 5vw;
         } 
+    }
+
+    //Projects
+    .projects {
+        .projects-inner {
+            h4 {
+             font-size: 5vw;       
+            }
+
+            .projects-container{               
+                & > div {  
+                    height: 9rem; 
+                    width: 90%;  
+                    
+                    div {
+                        font-size: 4.5vw;
+                    }
+                }
+            }
+       }
     }
 
     //Skills

@@ -1,11 +1,12 @@
 import React from 'react';
-
-//Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { gsap, ScrollTrigger } from 'gsap/all';
+
+//Images
+import sunshine_url from './images/sunshine-meme.jpg';
 
 library.add(faGithub, faBars);
 
@@ -157,6 +158,41 @@ class App extends React.Component {
             <span className="span-row-4">Prototyping</span>
           </div>
         </div>
+        <div className="projects">
+          <div className="projects-inner">
+            <h4>My Projects</h4>
+            <div class="projects-container">
+              <div>
+                <img src={sunshine_url}/>
+                <div>Sunshine Meme Generator</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>Geo Covid</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>Highway Dodge</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>BeeChat</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>LaptopCatalog</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>Wallify</div>
+              </div>
+              <div>
+                <img src=""/>
+                <div>LAAutoDetaidivng</div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="skills">
           <h4>Technologies and Skills</h4>
           <div className="skills-container">
@@ -181,20 +217,8 @@ class App extends React.Component {
             <span>Sockets</span>
           </div>
         </div>
-        <div className="project-sub-links">
-          <ul>
-            <li>Sunshine Meme Generator</li>
-            <li>Geo Covid</li>
-            <li>Highway Dodge</li>
-            <li>BeeChat</li>
-            <li>LaptopCatalog</li>
-            <li>Wallify</li>
-            <li>LAAutoDetailing</li>
-          </ul>
-        </div>
-        <div className="projects">Projects</div>
         <footer>Footer</footer>
-      </div >
+      </div>
     );
   }
 }
