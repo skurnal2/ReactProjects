@@ -1,10 +1,11 @@
 //Images
-import sunshine_url from './images/sunshine-meme.jpg';
+import sunshine_url from './images/sunshine-meme.gif';
 import geo_covid_url from './images/geo-covid.JPG';
 import highway_dodge_url from './images/highway_dodge.JPG';
 import bee_chat_url from './images/bee-chat.JPG';
 import la_auto_detail_url from './images/la-auto-detail.JPG';
 import wallify_url from './images/wallify.JPG';
+import color_app_url from './images/color-app.JPG';
 
 //Imports
 import React from 'react';
@@ -201,8 +202,8 @@ class App extends React.Component {
                 <div>Wallify</div>
               </div>
               <div>
-                <img src="" />
-                <div>LaptopCatalog</div>
+                <img src={color_app_url} />
+                <div>ColorApp</div>
               </div>              
             </div>
 
@@ -234,7 +235,7 @@ class App extends React.Component {
             <span>Sockets</span>
           </div>
         </div>
-        <footer>Footer</footer>
+        {/* <footer>Footer</footer> */}
       </div>
     );
   }
