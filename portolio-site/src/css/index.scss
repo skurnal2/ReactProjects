@@ -40,7 +40,7 @@ $font4: 'Sora', sans-serif;
         "projects projects projects projects"
         "skills skills skills skills"        
         "footer footer footer footer"; 
-    overflow: hidden;   
+    // overflow: hidden;   
 }
 
 nav {
@@ -332,7 +332,7 @@ main {
                     
                     left: 0;
                     top: 0;      
-                    object-fit: cover;          
+                    // object-fit: cover;          
                     min-height: 100%;
                     min-width: 100%;
                     transition: .5s;   

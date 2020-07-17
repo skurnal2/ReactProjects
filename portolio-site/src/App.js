@@ -9,6 +9,9 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 import sunshine_url from './images/sunshine-meme.jpg';
 import geo_covid_url from './images/geo-covid.JPG';
 import highway_dodge_url from './images/highway_dodge.JPG';
+import bee_chat_url from './images/bee-chat.JPG';
+import la_auto_detail_url from './images/la-auto-detail.JPG';
+import wallify_url from './images/wallify.JPG';
 
 library.add(faGithub, faBars);
 
@@ -167,7 +170,7 @@ class App extends React.Component {
         <div className="projects">
           <div className="projects-inner">
             <h4>My Projects</h4>
-            <div class="projects-container">
+            <div className="projects-container">
               <div>
                 <img src={sunshine_url}/>
                 <div>Sunshine Meme Generator</div>
@@ -181,20 +184,20 @@ class App extends React.Component {
                 <div>Highway Dodge</div>
               </div>
               <div>
-                <img src=""/>
+                <img src={bee_chat_url}/>
                 <div>BeeChat</div>
               </div>
               <div>
-                <img src=""/>
-                <div>LaptopCatalog</div>
+                <img src={la_auto_detail_url}/>
+                <div>LA Auto Detail</div>
               </div>
               <div>
-                <img src=""/>
+                <img src={wallify_url}/>
                 <div>Wallify</div>
               </div>
               <div>
                 <img src=""/>
-                <div>LAAutoDetaidivng</div>
+                <div>LaptopCatalog</div>
               </div>
             </div>
           </div>
