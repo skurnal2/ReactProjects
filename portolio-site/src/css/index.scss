@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Righteous&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Sora&display=swap);
 
 
 //Colors
@@ -17,6 +18,7 @@ $color5: #4e2c00;
 $font1: 'Racing Sans One', serif;
 $font2: 'Righteous', cursive;
 $font3: 'Rubik Mono One', sans-serif;
+$font4: 'Sora', sans-serif;
 
 * {
     margin: 0;
@@ -117,7 +119,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $font1;  
+    font-family: $font4;  
     
     h1 {
         color: white;
@@ -182,7 +184,7 @@ main {
     position: relative;
     height: 100%;
     width: 100%;
-    font-family: $font2;
+    font-family: $font2;    
     color: white;    
 
     h2 {
@@ -266,7 +268,7 @@ main {
     
     
     h4 {
-        font-family: $font1;
+        font-family: $font4;
         font-size: 4vw;        
         font-weight: normal;
         padding: 1rem 2vw; 
@@ -302,13 +304,13 @@ main {
     .projects-inner {
         background: linear-gradient(180deg, $color3 0%, $color1 100%);
         padding: 1rem 2vw;
-        margin: 1rem;
+        margin: 1rem;        
         border-radius: 15px;
 
         h4 {
-            font-family: $font1;
+            font-family: $font4;
             font-size: 4vw;
-            font-weight: normal;        
+            
         }
 
         .projects-container{    
@@ -319,28 +321,33 @@ main {
                 display: inline-block;   
                 height: 15rem; 
                 width: 30%;   
-                border-radius: 1rem;         
+                border-radius: .75rem;         
                 margin: .5rem;
                 background-color: $color4;                
                 position: relative;
                 overflow: hidden;    
-                cursor: pointer;            
+                cursor: pointer;                     
 
                 img {
                     
                     left: 0;
                     top: 0;      
-                    background-size: cover;              
-                    width: 100%;
-                    transition: .5s;                                        
+                    object-fit: cover;          
+                    min-height: 100%;
+                    min-width: 100%;
+                    transition: .5s;   
+                    filter: blur(3px) grayscale(.8);
                 }
 
                 &:hover {
                     img {
-                        width: 110%;
+                        transform: scale(1.1);
                         left: -1rem;
                         top: -.5rem;
+                        filter: none;                                                          
                     }
+
+                    box-shadow: none;
                 }
 
                 div {
@@ -350,11 +357,10 @@ main {
                     padding: 1rem;
                     padding-right: 1.1rem;
                     border-top-left-radius: 1rem;                    
-                    font-family: $font1;
+                    font-family: $font4;
                     font-size: 1.7vw;
                     transition: .4s;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    // backdrop-filter: blur(10px);
+                    background-color: rgba(0, 0, 0, 0.5);                    
                     color: white;                    
                 }
 
@@ -373,7 +379,7 @@ main {
 //Skills
 .skills {
     h4 {
-        font-family: $font1;
+        font-family: $font4;
         font-size: 4vw;        
         font-weight: normal;
         padding: 1rem 2vw; 

@@ -7,6 +7,8 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 
 //Images
 import sunshine_url from './images/sunshine-meme.jpg';
+import geo_covid_url from './images/geo-covid.JPG';
+import highway_dodge_url from './images/highway_dodge.JPG';
 
 library.add(faGithub, faBars);
 
@@ -56,7 +58,9 @@ class App extends React.Component {
             end: "600px 10px",
             scrub: true,
           },
-          x: 150,
+          scale: .5,
+          stagger: .25,
+          opacity: 0,
           duration: 11
         });
         gsap.from(".span-row-2, .span-row-4", {
@@ -66,7 +70,9 @@ class App extends React.Component {
             end: "600px 10px",
             scrub: true,
           },
-          x: -150,
+          scale: .5,
+          stagger: -.25,
+          opacity: 0,
           duration: 11,
         });
       },
@@ -167,11 +173,11 @@ class App extends React.Component {
                 <div>Sunshine Meme Generator</div>
               </div>
               <div>
-                <img src=""/>
+                <img src={geo_covid_url}/>
                 <div>Geo Covid</div>
               </div>
               <div>
-                <img src=""/>
+                <img src={highway_dodge_url}/>
                 <div>Highway Dodge</div>
               </div>
               <div>
