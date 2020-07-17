@@ -30,8 +30,7 @@ $font4: 'Sora', sans-serif;
 
 //DESKTOP
 .container {
-    display: grid;
-    // height: 400vh; //REMOVE THIS
+    display: grid;    
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 100vh auto auto auto auto;
     grid-template-areas: 
@@ -329,14 +328,14 @@ main {
                 cursor: pointer;                     
 
                 img {
-                    
+                    position: absolute;
                     left: 0;
                     top: 0;      
                     // object-fit: cover;          
                     min-height: 100%;
                     min-width: 100%;
-                    transition: .5s;   
-                    filter: blur(3px) grayscale(.8);
+                    filter: grayscale(1);
+                    transition: .5s;
                 }
 
                 &:hover {
