@@ -3,8 +3,13 @@ import {
   StyleSheet,    
   Text,
   View,
+  TouchableOpacity,
+  FlatList
 } from 'react-native';
 import colors from './Colors';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import tempData from './tempData';
+import TodoList from './components/TodoList';
 
 export default class App extends React.Component {
   render() {
@@ -13,8 +18,26 @@ export default class App extends React.Component {
         <View style={{flexDirection: "row"}}>
           <View style={styles.divider}/>
           <Text style={styles.title}>
-            TodoTornado
+            Todo<Text style={{fontWeight: "bold", color: colors.blue}}>Tornado</Text>
           </Text>
+          <View style={styles.divider}/>
+        </View>
+        <View style={{marginVertical:48 }} >
+          <TouchableOpacity style={styles.addList}>
+            <AntDesign name="plus" size={16} color={colors.blue}/>
+          </TouchableOpacity>
+          <Text style={styles.add}>Add List</Text>
+        </View>
+        <View style={{height: 275, paddingLeft: 32}}>
+          <FlatList 
+            data={tempData} 
+            keyExtractor={item => item.name} 
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item}) => (
+              <TodoList list={item}/>
+            )}
+          />
         </View>
       </View>
     );
@@ -33,5 +56,25 @@ const styles = StyleSheet.create({
     height: 1,
     flex: 1,
     alignSelf: "center"
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "normal",
+    color: colors.black,
+    paddingHorizontal: 30
+  },
+  addList: {
+    borderWidth: 2,
+    borderColor: colors.lightblue,
+    borderRadius: 4,
+    padding: 16,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  add: {
+    color: colors.blue,
+    fontWeight: "bold",
+    fontSize: 14,
+    marginTop: 8
   }
 });
