@@ -131,10 +131,13 @@ nav {
         -webkit-text-stroke: .5px $color1;                
         font-weight: normal;        
         font-size: 2.5vh;
-        transition: 1s;
+        
+        span {
+            transition: .25s;
+        }
 
-        &:hover {
-            margin-left: 0;
+        &:hover span {
+            margin: 0 !important;
         }
     }
 }

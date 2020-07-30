@@ -45,11 +45,21 @@ class App extends React.Component {
     gsap.registerPlugin(ScrollTrigger);
     //GSAP Animations
     gsap.from(".nav-links a", { duration: 1, opacity: 0, y: -150, stagger: -0.25 });
+    gsap.from("nav h1", {
+      scrollTrigger: {
+        trigger: ".services",
+        start: "top", 
+        end: "100px 15px",       
+        markers: true,
+        scrub: true
+      },          
+      y: -120                
+    });
     gsap.to("#title-first", {
       scrollTrigger: {
-        trigger: ".second-h2",
-        start: "bottom", 
-        end: "200px 15px",       
+        trigger: ".services",
+        start: "top", 
+        end: "100px 15px",       
         markers: true,
         scrub: true
       },    
@@ -58,9 +68,9 @@ class App extends React.Component {
     });
     gsap.to("#title-second", {
       scrollTrigger: {
-        trigger: ".second-h2",
-        start: "bottom",
-        end: "200px 15px",
+        trigger: ".services",
+        start: "top",
+        end: "100px 15px",
         scrub: true
       },      
       visibility: "visible",
