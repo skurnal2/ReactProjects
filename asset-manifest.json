@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.757eac42.chunk.css",
-    "main.js": "/static/js/main.c5c802c0.chunk.js",
-    "main.js.map": "/static/js/main.c5c802c0.chunk.js.map",
+    "main.css": "/static/css/main.40047670.chunk.css",
+    "main.js": "/static/js/main.507d9d51.chunk.js",
+    "main.js.map": "/static/js/main.507d9d51.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d3174109.js",
     "runtime-main.js.map": "/static/js/runtime-main.d3174109.js.map",
     "static/js/2.06b6dc44.chunk.js": "/static/js/2.06b6dc44.chunk.js",
     "static/js/2.06b6dc44.chunk.js.map": "/static/js/2.06b6dc44.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fbcdd6d70c7b97c3bcc0f1e9ee9e9c99.js": "/precache-manifest.fbcdd6d70c7b97c3bcc0f1e9ee9e9c99.js",
+    "precache-manifest.ea46a886baf041d7a7eff214e3724613.js": "/precache-manifest.ea46a886baf041d7a7eff214e3724613.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.757eac42.chunk.css.map": "/static/css/main.757eac42.chunk.css.map",
+    "static/css/main.40047670.chunk.css.map": "/static/css/main.40047670.chunk.css.map",
     "static/js/2.06b6dc44.chunk.js.LICENSE.txt": "/static/js/2.06b6dc44.chunk.js.LICENSE.txt",
     "static/media/bee-chat.JPG": "/static/media/bee-chat.82622442.JPG",
     "static/media/color-app.JPG": "/static/media/color-app.af85d8d6.JPG",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.d3174109.js",
     "static/js/2.06b6dc44.chunk.js",
-    "static/css/main.757eac42.chunk.css",
-    "static/js/main.c5c802c0.chunk.js"
+    "static/css/main.40047670.chunk.css",
+    "static/js/main.507d9d51.chunk.js"
   ]
 }
