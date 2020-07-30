@@ -42,11 +42,32 @@ class App extends React.Component {
         this.gsapFunctions();
     }
 
-
+    gsap.registerPlugin(ScrollTrigger);
     //GSAP Animations
     gsap.from(".nav-links a", { duration: 1, opacity: 0, y: -150, stagger: -0.25 });
+    gsap.to("#title-first", {
+      scrollTrigger: {
+        trigger: ".second-h2",
+        start: "bottom", 
+        end: "200px 15px",       
+        markers: true,
+        scrub: true
+      },    
+      visibility: "visible",
+      marginRight: 50,                  
+    });
+    gsap.to("#title-second", {
+      scrollTrigger: {
+        trigger: ".second-h2",
+        start: "bottom",
+        end: "200px 15px",
+        scrub: true
+      },      
+      visibility: "visible",
+      marginLeft: 50,             
+    });
     gsap.from(".circle", { duration: 4, opacity: 0, y: -250, stagger: .3, ease: "elastic" });
-    gsap.registerPlugin(ScrollTrigger);
+    
     gsap.to(".first-h2", {
       scrollTrigger: {
         trigger: "nav",
@@ -99,7 +120,6 @@ class App extends React.Component {
         gsap.to("nav", {
           scrollTrigger: {
             trigger: "nav", 
-            markers: true, 
             start: "bottom",
             scrub: true,            
           },
@@ -160,7 +180,11 @@ class App extends React.Component {
         <div className="full-menu-wrapper" style={menuStyle}>
         </div>
         <nav>
-          <h1>Siddharth Kurnal</h1>
+          <h1>
+            <span id="title-first">Siddharth</span>
+            <br/>
+            <span id="title-second">Kurnal</span>
+          </h1>
           <div className="nav-links">
             <a href="#">Home</a>
             <a href="#">Projects</a>
