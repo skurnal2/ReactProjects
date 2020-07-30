@@ -119,21 +119,59 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $font4;  
-    
+    font-family: $font4;      
+    overflow: hidden;
+
     h1 {
-        color: white;        
-        visibility: hidden;
+        color: white;                
         width: 50%;
         text-align: center;
         font-family: $font2;
         text-transform: uppercase;
-        -webkit-text-stroke: .5px $color1;                
+        -webkit-text-stroke: 1px $color1;                
         font-weight: normal;        
         font-size: 2.5vh;
+        position: relative;        
         
+        #h1-circle {                                  
+            position: absolute;            
+            border-radius: 50%;
+            margin-left: 45%;
+            visibility: none;
+                 
+            &:nth-child(2) {
+                background: linear-gradient(0.45turn,rgba(0,0,0,0), $color2);
+                height: 6rem;            
+                width: 6rem;                 
+                top: -10px;
+                left: -40px;
+                
+                animation: circle-up-down 2.5s ease-in-out infinite;
+                
+            
+            }
+
+            &:first-child {
+                background: linear-gradient(0.45turn,rgba(0,0,0,0), $color3);
+                height: 10rem;            
+                width: 10rem;                 
+                top: 5px;
+                left: 10px;
+
+                animation: circle-up-down 3s ease-in-out infinite;
+            
+            }   
+            
+            @keyframes circle-up-down {
+                50% {
+                    transform: translateY(-3px);
+                }
+            }
+        }
+
         span {
-            transition: .25s;
+            transition: .25s;            
+            position: relative;
         }
 
         &:hover span {
