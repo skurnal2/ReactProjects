@@ -25,11 +25,25 @@ class App extends React.Component {
     this.state = {
       isOpen: false,
       zIndex: "-100",
-      opacity: "0"
+      opacity: "0",
+      currentWidth: window.screen.width
     }
   }
 
-  gsapFunctions() {
+  gsapFunctions() {      
+
+    //Reload GSAP animations on Screen thresholds
+    if(window.screen.width > 1024 && this.state.currentWidth < 1024) { 
+        this.state.currentWidth = window.screen.width;
+        this.gsapFunctions();
+    }
+    else if(window.screen.width < 1024 && this.state.currentWidth > 1024) {
+      this.state.currentWidth = window.screen.width;
+        this.gsapFunctions();
+    }
+
+
+    //GSAP Animations
     gsap.from(".nav-links a", { duration: 1, opacity: 0, y: -150, stagger: -0.25 });
     gsap.from(".circle", { duration: 4, opacity: 0, y: -250, stagger: .3, ease: "elastic" });
     gsap.registerPlugin(ScrollTrigger);
@@ -80,6 +94,18 @@ class App extends React.Component {
           opacity: 0,
           duration: 11,
         });
+
+        //Changing height on scroll animation
+        gsap.to("nav", {
+          scrollTrigger: {
+            trigger: "nav", 
+            markers: true, 
+            start: "bottom",
+            scrub: true,            
+          },
+          height: "4rem",
+          ease: "ease"
+        })
       },
 
       "(max-width: 1024px)": function () {

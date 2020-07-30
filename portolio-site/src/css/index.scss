@@ -51,6 +51,7 @@ nav {
     background: #492b7c5b;
     -webkit-backdrop-filter: blur(10px)blur(10px);
     backdrop-filter: blur(10px)blur(10px); 
+    transition: .5s;
 }
 main { 
     grid-area: main; 
