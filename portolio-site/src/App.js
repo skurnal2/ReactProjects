@@ -1,12 +1,3 @@
-//Images
-import sunshine_url from "./images/sunshine-meme.gif";
-import geo_covid_url from "./images/geo-covid.JPG";
-import highway_dodge_url from "./images/highway_dodge.JPG";
-import bee_chat_url from "./images/bee-chat.JPG";
-import la_auto_detail_url from "./images/la-auto-detail.JPG";
-import wallify_url from "./images/wallify.JPG";
-import color_app_url from "./images/color-app.JPG";
-
 //Imports
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +5,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { gsap, ScrollTrigger } from "gsap/all";
+
+//Component Imports
+import Nav from "./components/nav";
+import Services from "./components/services";
+import Projects from "./components/projects";
+import Skills from "./components/skills";
 
 library.add(faGithub, faBars);
 
@@ -52,7 +49,6 @@ class App extends React.Component {
         trigger: ".services",
         start: "top",
         end: "100px 15px",
-        markers: true,
         scrub: true,
       },
       y: -120,
@@ -62,7 +58,6 @@ class App extends React.Component {
         trigger: ".services",
         start: "top",
         end: "100px 15px",
-        markers: true,
         scrub: true,
       },
       visibility: "visible",
@@ -194,27 +189,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="full-menu-wrapper" style={menuStyle}></div>
-        <nav>
-          <h1>
-            <div id="h1-circle" />
-            <div id="h1-circle" />
-            <span id="title-first">Siddharth</span>
-            <br />
-            <span id="title-second">Kurnal</span>
-          </h1>
-          <div className="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
-            <a href="http://github.com/skurnal2">
-              <FontAwesomeIcon
-                className="github-symbol"
-                icon={["fab", "github"]}
-              />
-              GitHub
-            </a>
-            <a href="#">Contact</a>
-          </div>
-        </nav>
+        <Nav />
         <div className="nav-menu-button" onClick={() => this.handleMenu()}>
           <FontAwesomeIcon className="menu-symbol" icon={["fa", "bars"]} />
         </div>
@@ -227,98 +202,9 @@ class App extends React.Component {
             <div className="circle" />
           </div>
         </main>
-        <div className="services">
-          <h4>I can help you with</h4>
-          <div className="services-container">
-            <span className="span-row-1">Web Development</span>
-            <span className="span-row-1">Web Design</span>
-            <span className="span-row-2">Mobile Development</span>
-            <span className="span-row-2">UX</span>
-            <span className="span-row-2">QA</span>
-            <span className="span-row-3">Database</span>
-            <span className="span-row-3">Wordpress</span>
-            <span className="span-row-3">Testing</span>
-            <span className="span-row-4">System Analysis</span>
-            <span className="span-row-4">Prototyping</span>
-          </div>
-        </div>
-        <div className="projects">
-          <div className="projects-inner">
-            <h4>My Projects</h4>
-            <div className="projects-container">
-              <div>
-                <img src={sunshine_url} />
-                <div>Sunshine Meme Generator</div>
-              </div>
-              <div>
-                <img src={geo_covid_url} />
-                <div>Geo Covid</div>
-              </div>
-              <div>
-                <img src={highway_dodge_url} />
-                <div>Highway Dodge</div>
-              </div>
-              <div>
-                <img src={bee_chat_url} />
-                <div>BeeChat</div>
-              </div>
-              <div>
-                <img src={la_auto_detail_url} />
-                <div>LA Auto Detail</div>
-              </div>
-              <div>
-                <img src={wallify_url} />
-                <div>Wallify</div>
-              </div>
-              <div>
-                <img src={color_app_url} />
-                <div>ColorApp</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="skills">
-          <h4>Technologies and Skills</h4>
-          <div className="skills-container">
-            <span>C#</span>
-            <span>ASP.NET</span>
-            <span>Java</span>
-            <span>PHP</span>
-            <span>JavaScript</span>
-            <span>React Native</span>
-            <span>ReactJs</span>
-            <span>NodeJs</span>
-            <span>VueJs</span>
-            <span>JavaScript</span>
-            <span>Android</span>
-            <span>iOS-Swift</span>
-            <span>C++</span>
-            <span>Python</span>
-            <span>CSS</span>
-            <span>SASS</span>
-            <span>jQuery</span>
-            <span>MySQL</span>
-            <span>SQL Server</span>
-            <span>RESTful API</span>
-            <span>Git</span>
-            <span>Flutter</span>
-            <span>Entity Framework</span>
-            <span>Maven</span>
-            <span>Photoshop</span>
-            <span>Linux</span>
-            <span>linq</span>
-            <span>Bash</span>
-            <span>Agile</span>
-            <span>Scrum</span>
-            <span>GSAP</span>
-            <span>ERD</span>
-            <span>Normalization</span>
-            <span>Azure</span>
-            <span>UML</span>
-            <span>SEO</span>
-            <span>Sockets</span>
-          </div>
-        </div>
+        <Services />
+        <Projects />
+        <Skills />
         {/* <footer>Footer</footer> */}
       </div>
     );
