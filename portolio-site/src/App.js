@@ -5,12 +5,13 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { gsap, ScrollTrigger } from "gsap/all";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-//Component Imports
-import Nav from "./components/nav";
-import Services from "./components/services";
-import Projects from "./components/projects";
-import Skills from "./components/skills";
+//Page imports
+import HomePage from './components/routes/home-page';
+import ProjectsPage from './components/routes/projects-page';
+
+
 
 library.add(faGithub, faBars);
 
@@ -26,6 +27,11 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.gsapFunctions();
+  }
+
+  // Custom Functions START
   gsapFunctions() {
     //Reload GSAP animations on Screen thresholds
     if (window.screen.width > 1024 && this.state.currentWidth < 1024) {
@@ -175,10 +181,7 @@ class App extends React.Component {
       console.log("Menu Close");
     }
   }
-
-  componentDidMount() {
-    this.gsapFunctions();
-  }
+  //Custom Functions END
 
   render() {
     const menuStyle = {
@@ -189,22 +192,33 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="full-menu-wrapper" style={menuStyle}></div>
-        <Nav />
+        <nav>
+        <h1>
+          <div id="h1-circle" />
+          <div id="h1-circle" />
+          <span id="title-first">Siddharth</span>
+          <br />
+          <span id="title-second">Kurnal</span>
+        </h1>
+        <div className="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Projects</a>
+          <a href="http://github.com/skurnal2">
+            <FontAwesomeIcon
+              className="github-symbol"
+              icon={["fab", "github"]}
+            />
+            GitHub
+          </a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
         <div className="nav-menu-button" onClick={() => this.handleMenu()}>
           <FontAwesomeIcon className="menu-symbol" icon={["fa", "bars"]} />
         </div>
-        <main>
-          <div id="name-container">
-            <h2 className="first-h2">SIDDHARTH</h2>
-            <h2 className="second-h2">KURNAL</h2>
-            <h3>WEB / MOBILE DEVELOPER</h3>
-            <div className="circle" />
-            <div className="circle" />
-          </div>
-        </main>
-        <Services />
-        <Projects />
-        <Skills />
+        
+          <HomePage/>
+        
         {/* <footer>Footer</footer> */}
       </div>
     );
