@@ -1,5 +1,6 @@
 import React from "react";
 import '../../css/home-page.scss';
+import '../../css/nav.scss';
 
 //Component Imports
 import Services from "../home-sections/services";

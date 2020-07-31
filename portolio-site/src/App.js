@@ -5,14 +5,21 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { gsap, ScrollTrigger } from "gsap/all";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 //Common Imports within Routes
-import './css/nav.scss';
+import "./css/nav.scss";
 
 //Page imports
 import HomePage from "./components/routes/home-page";
 import ProjectsPage from "./components/routes/projects-page";
+import ContactPage from "./components/routes/contact-page";
 
 library.add(faGithub, faBars);
 
@@ -51,6 +58,7 @@ class App extends React.Component {
       y: -150,
       stagger: -0.25,
     });
+
     gsap.from("nav h1", {
       scrollTrigger: {
         trigger: ".services",
@@ -136,7 +144,6 @@ class App extends React.Component {
           duration: 11,
         });
 
-        //Changing height on scroll animation
         gsap.to("nav", {
           scrollTrigger: {
             trigger: "nav",
@@ -212,7 +219,7 @@ class App extends React.Component {
                 />
                 GitHub
               </a>
-              {/* <a href="#">Contact</a> */}
+              <Link to="/contact">Contact</Link>
             </div>
           </nav>
           <div className="nav-menu-button" onClick={() => this.handleMenu()}>
@@ -222,10 +229,16 @@ class App extends React.Component {
           {/* Routes (depends on current route in URL) */}
           <Switch>
             <Route exact path="/">
-              <HomePage/>
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home">
+              <HomePage />
             </Route>
             <Route path="/projects">
-              <ProjectsPage/>
+              <ProjectsPage />
+            </Route>
+            <Route path="/contact">
+              <ContactPage />
             </Route>
           </Switch>
 
