@@ -5,13 +5,14 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { gsap, ScrollTrigger } from "gsap/all";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
+//Common Imports within Routes
+import './css/nav.scss';
 
 //Page imports
-import HomePage from './components/routes/home-page';
-import ProjectsPage from './components/routes/projects-page';
-
-
+import HomePage from "./components/routes/home-page";
+import ProjectsPage from "./components/routes/projects-page";
 
 library.add(faGithub, faBars);
 
@@ -190,37 +191,47 @@ class App extends React.Component {
     };
 
     return (
-      <div className="container">
-        <div className="full-menu-wrapper" style={menuStyle}></div>
-        <nav>
-        <h1>
-          <div id="h1-circle" />
-          <div id="h1-circle" />
-          <span id="title-first">Siddharth</span>
-          <br />
-          <span id="title-second">Kurnal</span>
-        </h1>
-        <div className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="http://github.com/skurnal2">
-            <FontAwesomeIcon
-              className="github-symbol"
-              icon={["fab", "github"]}
-            />
-            GitHub
-          </a>
-          <a href="#">Contact</a>
+      <Router>
+        <div className="container">
+          <div className="full-menu-wrapper" style={menuStyle}></div>
+          <nav>
+            <h1>
+              <div id="h1-circle" />
+              <div id="h1-circle" />
+              <span id="title-first">Siddharth</span>
+              <br />
+              <span id="title-second">Kurnal</span>
+            </h1>
+            <div className="nav-links">
+              <Link to="/">Home</Link>
+              <Link to="/projects">Projects</Link>
+              <a href="http://github.com/skurnal2">
+                <FontAwesomeIcon
+                  className="github-symbol"
+                  icon={["fab", "github"]}
+                />
+                GitHub
+              </a>
+              {/* <a href="#">Contact</a> */}
+            </div>
+          </nav>
+          <div className="nav-menu-button" onClick={() => this.handleMenu()}>
+            <FontAwesomeIcon className="menu-symbol" icon={["fa", "bars"]} />
+          </div>
+
+          {/* Routes (depends on current route in URL) */}
+          <Switch>
+            <Route exact path="/">
+              <HomePage/>
+            </Route>
+            <Route path="/projects">
+              <ProjectsPage/>
+            </Route>
+          </Switch>
+
+          {/* <footer>Footer</footer> */}
         </div>
-      </nav>
-        <div className="nav-menu-button" onClick={() => this.handleMenu()}>
-          <FontAwesomeIcon className="menu-symbol" icon={["fa", "bars"]} />
-        </div>
-        
-          <HomePage/>
-        
-        {/* <footer>Footer</footer> */}
-      </div>
+      </Router>
     );
   }
 }

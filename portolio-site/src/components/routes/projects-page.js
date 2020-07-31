@@ -7,3 +7,5 @@ class ProjectsPage extends React.Component {
         );
     }
 }
+
+export default ProjectsPage;

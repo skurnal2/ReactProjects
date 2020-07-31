@@ -1,4 +1,5 @@
 import React from "react";
+import '../../css/home-page.scss';
 
 //Component Imports
 import Services from "../home-sections/services";
