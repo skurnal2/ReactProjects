@@ -1,5 +1,5 @@
-# 30 Projects In 75 Days
-An effort to create 30 demo apps within 75 days
+# React Projects
+Creating Web as well as Mobile apps using React (ReactJs and React Native)
 
 ## Here is the list of apps created
 
