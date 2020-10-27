@@ -3,7 +3,7 @@ import React from "react";
 const Services = () => {
   return (
     <div className="services">
-      <h4>I can help you with</h4>
+      <h4>What I do</h4>
       <div className="services-container">
         <span className="span-row-1">Web Development</span>
         <span className="span-row-1">Web Design</span>

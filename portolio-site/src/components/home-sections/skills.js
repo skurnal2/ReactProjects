@@ -16,7 +16,7 @@ const Skills = () => {
         <span>VueJs</span>
         <span>JavaScript</span>
         <span>Android</span>
-        <span>iOS-Swift</span>
+        <span>iOS-Swift</span>        
         <span>C++</span>
         <span>Python</span>
         <span>CSS</span>
@@ -34,6 +34,7 @@ const Skills = () => {
         <span>linq</span>
         <span>Bash</span>
         <span>Agile</span>
+        <span>JIRA</span>
         <span>Scrum</span>
         <span>GSAP</span>
         <span>ERD</span>
