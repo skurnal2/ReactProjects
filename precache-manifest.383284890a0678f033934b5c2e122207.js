@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6f9da8bed2dbac9c4f18df00b01949e",
+    "revision": "307dfd670f4734233b65da070a2376ea",
     "url": "/index.html"
   },
   {
-    "revision": "1c6e39b377aab1b41b5d",
+    "revision": "87de71170b538992683e",
     "url": "/static/css/main.41132293.chunk.css"
   },
   {
-    "revision": "d1b8ded25b0a84a56f77",
-    "url": "/static/js/2.f70fbb07.chunk.js"
+    "revision": "148e73d2478adae80e22",
+    "url": "/static/js/2.9cea9b32.chunk.js"
   },
   {
     "revision": "94708d60e6619beab8515b3eaa6e076f",
-    "url": "/static/js/2.f70fbb07.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9cea9b32.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1c6e39b377aab1b41b5d",
-    "url": "/static/js/main.390d7b56.chunk.js"
+    "revision": "87de71170b538992683e",
+    "url": "/static/js/main.12c6a050.chunk.js"
   },
   {
     "revision": "d937f825f587a19e6d49",
@@ -46,6 +46,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9185815f63839088181a727f41d67d67",
     "url": "/static/media/la-auto-detail.9185815f.JPG"
+  },
+  {
+    "revision": "99de6c3cae90699d3fe3a0697792dae2",
+    "url": "/static/media/laptops-catalog.99de6c3c.JPG"
+  },
+  {
+    "revision": "d3c6eb1f2f549cd692f7852044feb0c4",
+    "url": "/static/media/old-portfolio.d3c6eb1f.JPG"
   },
   {
     "revision": "c70a45f63520f780f3ec4dc47e9e91fb",

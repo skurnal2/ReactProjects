@@ -1,31 +1,33 @@
 {
   "files": {
     "main.css": "/static/css/main.41132293.chunk.css",
-    "main.js": "/static/js/main.390d7b56.chunk.js",
-    "main.js.map": "/static/js/main.390d7b56.chunk.js.map",
+    "main.js": "/static/js/main.12c6a050.chunk.js",
+    "main.js.map": "/static/js/main.12c6a050.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d3174109.js",
     "runtime-main.js.map": "/static/js/runtime-main.d3174109.js.map",
-    "static/js/2.f70fbb07.chunk.js": "/static/js/2.f70fbb07.chunk.js",
-    "static/js/2.f70fbb07.chunk.js.map": "/static/js/2.f70fbb07.chunk.js.map",
+    "static/js/2.9cea9b32.chunk.js": "/static/js/2.9cea9b32.chunk.js",
+    "static/js/2.9cea9b32.chunk.js.map": "/static/js/2.9cea9b32.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.475a7dc0c381e7a77d04af8491cd7f3b.js": "/precache-manifest.475a7dc0c381e7a77d04af8491cd7f3b.js",
+    "precache-manifest.383284890a0678f033934b5c2e122207.js": "/precache-manifest.383284890a0678f033934b5c2e122207.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.41132293.chunk.css.map": "/static/css/main.41132293.chunk.css.map",
-    "static/js/2.f70fbb07.chunk.js.LICENSE.txt": "/static/js/2.f70fbb07.chunk.js.LICENSE.txt",
+    "static/js/2.9cea9b32.chunk.js.LICENSE.txt": "/static/js/2.9cea9b32.chunk.js.LICENSE.txt",
     "static/media/bee-chat.JPG": "/static/media/bee-chat.82622442.JPG",
     "static/media/color-app.JPG": "/static/media/color-app.af85d8d6.JPG",
     "static/media/digital-resume.jpg": "/static/media/digital-resume.d83ab405.jpg",
     "static/media/geo-covid.JPG": "/static/media/geo-covid.b4c6561d.JPG",
     "static/media/highway_dodge.JPG": "/static/media/highway_dodge.f3eba337.JPG",
     "static/media/la-auto-detail.JPG": "/static/media/la-auto-detail.9185815f.JPG",
+    "static/media/laptops-catalog.JPG": "/static/media/laptops-catalog.99de6c3c.JPG",
+    "static/media/old-portfolio.JPG": "/static/media/old-portfolio.d3c6eb1f.JPG",
     "static/media/portfolio-site.JPG": "/static/media/portfolio-site.c70a45f6.JPG",
     "static/media/sunshine-meme.gif": "/static/media/sunshine-meme.0f1f21c9.gif",
     "static/media/wallify.JPG": "/static/media/wallify.679c7c6d.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.d3174109.js",
-    "static/js/2.f70fbb07.chunk.js",
+    "static/js/2.9cea9b32.chunk.js",
     "static/css/main.41132293.chunk.css",
-    "static/js/main.390d7b56.chunk.js"
+    "static/js/main.12c6a050.chunk.js"
   ]
 }
