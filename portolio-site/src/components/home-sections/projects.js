@@ -22,7 +22,7 @@ const Projects = () => {
         window.location.href='https://github.com/skurnal2/ResumeAssignment';
         break;
       case 'sunshine':
-        window.location.href='https://github.com/skurnal2/ReactProjects/tree/master/sunshine-meme-generator';
+        window.location.href='https://skurnal2.github.io/Sunshine-Meme-Generator/';
         break;
       case 'geo_covid':
         window.location.href='https://github.com/skurnal2/ReactProjects/tree/master/geo-covid';
