@@ -38,21 +38,6 @@ main {
     height: 100vh;
 }
 
-//FULL MENU WRAPPER
-.full-menu-wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #492b7c5b;
-    -webkit-backdrop-filter: blur(10px)blur(12px);
-    backdrop-filter: blur(10px)blur(12px);
-    transition: .5s;    
-}
-
 //MEDIA QUERY FOR MOBILE/TABLET LAYOUT
 @media only screen and (max-width: 1024px) {   
 

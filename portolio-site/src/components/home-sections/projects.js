@@ -10,6 +10,7 @@ import la_auto_detail_url from "../../images/la-auto-detail.JPG";
 import wallify_url from "../../images/wallify.JPG";
 import color_app_url from "../../images/color-app.JPG";
 import digital_resume_url from "../../images/digital-resume.jpg";
+import portfolio_site_url from "../../images/portfolio-site.JPG";
 
 const Projects = () => {
 
@@ -39,6 +40,9 @@ const Projects = () => {
       case 'color_app':
         window.location.href='https://github.com/skurnal2/ColorApp';
         break;
+      case 'portfolio_site':
+        window.location.href='https://github.com/skurnal2/ReactProjects/tree/master/portolio-site';
+        break;
     }
   }
 
@@ -47,37 +51,41 @@ const Projects = () => {
       <div className="projects-inner">
         <h4>My Projects</h4>
         <div className="projects-container">
-          <div>
-            <img src={digital_resume_url} alt="Siddharth Kurnal Digital Resume" onClick={() => goToThisLink('resume')} />
+          <div onClick={() => goToThisLink('resume')}>
+            <img src={digital_resume_url} alt="Siddharth Kurnal Digital Resume" />
             <div>Digital Resume</div>
           </div>
-          <div>
-            <img src={sunshine_url} alt="Sunshine Meme Generator" onClick={() => goToThisLink('sunshine')} />
+          <div onClick={() => goToThisLink('sunshine')}>
+            <img src={sunshine_url} alt="Sunshine Meme Generator" />
             <div>Sunshine Meme Generator</div>
           </div>
-          <div>
-            <img src={geo_covid_url} alt='Geo Covid' onClick={() => goToThisLink('geo_covid')} />
+          <div onClick={() => goToThisLink('geo_covid')}>
+            <img src={geo_covid_url} alt='Geo Covid' />
             <div>Geo Covid</div>
           </div>
-          <div>
-            <img src={highway_dodge_url} alt='Highway Dodge' onClick={() => goToThisLink('highway_dodge')} />
+          <div onClick={() => goToThisLink('highway_dodge')}>
+            <img src={highway_dodge_url} alt='Highway Dodge' />
             <div>Highway Dodge</div>
           </div>
-          <div>
-            <img src={bee_chat_url} alt="Bee Chat" onClick={() => goToThisLink('bee_chat')} />
+          <div onClick={() => goToThisLink('bee_chat')}>
+            <img src={bee_chat_url} alt="Bee Chat" />
             <div>BeeChat</div>
           </div>
-          <div>
-            <img src={la_auto_detail_url} alt="LA Auto Detail" onClick={() => goToThisLink('la_auto')} />
+          <div onClick={() => goToThisLink('la_auto')}>
+            <img src={la_auto_detail_url} alt="LA Auto Detail" />
             <div>LA Auto Detail</div>
           </div>
-          <div>
-            <img src={wallify_url} alt="Wallify" onClick={() => goToThisLink('wallify')} />
+          <div onClick={() => goToThisLink('wallify')}>
+            <img src={wallify_url} alt="Wallify" />
             <div>Wallify</div>
           </div>
-          <div>
-            <img src={color_app_url} alt="Color App" onClick={() => goToThisLink('color_app')} />
+          <div onClick={() => goToThisLink('color_app')}>
+            <img src={color_app_url} alt="Color App" />
             <div>ColorApp</div>
+          </div>
+          <div onClick={() => goToThisLink('portfolio_site')}>
+            <img src={portfolio_site_url} alt="Portfolio Site" />
+            <div>Potfolio Site</div>
           </div>
         </div>
       </div>

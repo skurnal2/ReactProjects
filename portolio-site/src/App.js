@@ -2,7 +2,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faBoxTissue } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { gsap, ScrollTrigger } from "gsap/all";
 import {
@@ -42,11 +42,15 @@ class App extends React.Component {
   // Custom Functions START
   gsapFunctions() {
     //Reload GSAP animations on Screen thresholds
-    if (window.screen.width > 1024 && this.state.currentWidth < 1024) {
-      this.state.currentWidth = window.screen.width;
+    if (window.screen.width > 1024 && this.state.currentWidth < 1024) {      
+      this.setState({
+        currentWidth: window.screen.width        
+      });
       this.gsapFunctions();
     } else if (window.screen.width < 1024 && this.state.currentWidth > 1024) {
-      this.state.currentWidth = window.screen.width;
+      this.setState({
+        currentWidth: window.screen.width        
+      });
       this.gsapFunctions();
     }
 
@@ -200,7 +204,19 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <div className="full-menu-wrapper" style={menuStyle}></div>
+          <div className="full-menu-wrapper" style={menuStyle}>
+              <Link to="/" onClick={() => this.handleMenu()}>Home</Link>
+              <Link to="/projects" onClick={() => this.handleMenu()}>Projects</Link>
+              <a href="http://github.com/skurnal2">
+                <FontAwesomeIcon
+                  className="github-symbol"
+                  icon={["fab", "github"]}
+                />
+                GitHub
+              </a>
+              {/* <Link to="/contact" onClick={() => this.handleMenu()}>Contact</Link> */}
+              <a href="mailto:contact@siddharthkurnal.com">Contact</a> 
+          </div>
           <nav>
             <h1>
               <div id="h1-circle" />
@@ -219,7 +235,8 @@ class App extends React.Component {
                 />
                 GitHub
               </a>
-              <Link to="/contact">Contact</Link>
+              {/* <Link to="/contact">Contact</Link> */}
+              <a href="mailto:contact@siddharthkurnal.com">Contact</a> 
             </div>
           </nav>
           <div className="nav-menu-button" onClick={() => this.handleMenu()}>
@@ -229,18 +246,18 @@ class App extends React.Component {
           {/* Routes (depends on current route in URL) */}
           <Switch>
             <Route exact path="/">
-              <Redirect to="/home" />
+              <Redirect to="/home" />              
             </Route>
             <Route path="/home">
-              <HomePage />
+              <HomePage />              
             </Route>
             <Route path="/projects">
-              <ProjectsPage />
+              <ProjectsPage />              
             </Route>
             <Route path="/contact">
-              <ContactPage />
+              <ContactPage />              
             </Route>
-          </Switch>
+          </Switch>          
 
           {/* <footer>Footer</footer> */}
         </div>
