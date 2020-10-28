@@ -11,6 +11,8 @@ import wallify_url from "../../images/wallify.JPG";
 import color_app_url from "../../images/color-app.JPG";
 import digital_resume_url from "../../images/digital-resume.jpg";
 import portfolio_site_url from "../../images/portfolio-site.JPG";
+import old_portfolio_url from "../../images/old-portfolio.JPG";
+import laptops_catalog_url from "../../images/laptops-catalog.JPG";
 
 const Projects = () => {
 
@@ -42,6 +44,12 @@ const Projects = () => {
         break;
       case 'portfolio_site':
         window.location.href='https://github.com/skurnal2/ReactProjects/tree/master/portolio-site';
+        break;
+      case 'old_portfolio':
+        window.location.href='https://sidprojectsapp.000webhostapp.com/';
+        break;
+      case 'laptops_catalog':
+        window.location.href='https://sidprojectsapp.000webhostapp.com/CatalogProject/';
         break;
     }
   }
@@ -86,6 +94,14 @@ const Projects = () => {
           <div onClick={() => goToThisLink('portfolio_site')}>
             <img src={portfolio_site_url} alt="Portfolio Site" />
             <div>Potfolio Site</div>
+          </div>
+          <div onClick={() => goToThisLink('old_portfolio')}>
+            <img src={old_portfolio_url} alt="Old Portfolio Site" />
+            <div>Old Potfolio Site</div>
+          </div>
+          <div onClick={() => goToThisLink('laptops_catalog')}>
+            <img src={laptops_catalog_url} alt="Laptops Catalog" />
+            <div>Laptops Catalog</div>
           </div>
         </div>
       </div>
