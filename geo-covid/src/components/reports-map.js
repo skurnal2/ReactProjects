@@ -11,16 +11,18 @@ class ReportsMap extends React.Component {
 
     state = {
         sideHeading: "", 
-        coordinates: {long:-113.4183021, lat:53.5836081}        
+        coordinates: {long:-113.4183021, lat:53.5836081},
+        zoom: 10.5    
     }
 
     buttonSelected = (report) => {
         this.setState({
             sideHeading: report.location,
             coordinates: {
-                long: report.polygon.coordinates[0][0],
-                lat: report.polygon.coordinates[0][1]
-            }
+                long: report.polygon.coordinates[0][0][0],
+                lat: report.polygon.coordinates[0][0][1]
+            },
+            zoom: 13
         })
     }
 
@@ -40,9 +42,9 @@ class ReportsMap extends React.Component {
                                             <Row>
                                                 <Col>
                                                     Total: {report.total_cases} <br />
-                                        Active: {report.active_cases} <br />
-                                        Recovered: {report.recovered_cases} <br />
-                                        Deaths: {report.deaths}
+                                                    Active: {report.active_cases} <br />
+                                                    Recovered: {report.recovered_cases} <br />
+                                                    Deaths: {report.deaths}
                                                 </Col>
                                                 <Col>
                                                     <Button onClick={() => this.buttonSelected(report)}>Select</Button>
@@ -57,7 +59,9 @@ class ReportsMap extends React.Component {
                     </Col>
                     <Col>
                         <h3>{this.state.sideHeading}</h3>
-                        <MapContainer coordinates={this.state.coordinates} />
+                        <h5>Latitude: {this.state.coordinates.lat}</h5>
+                        <h5>Longitude: {this.state.coordinates.long}</h5>
+                        <MapContainer coordinates={this.state.coordinates} zoom={this.state.zoom} />
                     </Col>
                 </Row></Container>
         )

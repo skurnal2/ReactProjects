@@ -10,18 +10,22 @@ export class MapContainer extends React.Component {
     render() {
         return (
             <Map
-                google={this.props.google}
-                zoom={14}
+                google={this.props.google}            
+                zoom={this.props.zoom}                 
                 style={mapStyles}
                 initialCenter={{
+                    lat: 53.5461,
+                    lng: -113.4938
+                }}                
+                center={{
                     lat: this.props.coordinates.lat,
                     lng: this.props.coordinates.long
-                }}
+                }}                
             />
         );
     }
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyDxecS6-4llq9SxzrpLxwCNUuMt01eN3iI'
+    apiKey: ''
 })(MapContainer);

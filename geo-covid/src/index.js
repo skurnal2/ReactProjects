@@ -33,10 +33,12 @@ class App extends React.Component {
         return (
             <Container className="p-3">
                 <Jumbotron>
-                    <h1>Geo C<img src={logo} alt="covid icon" />vid - Alberta</h1>
-                   
+                    <h1>Geo C<img src={logo} alt="covid icon" />vid - Alberta</h1>                   
                 </Jumbotron>
-                
+                <a href="https://github.com/skurnal2/ReactProjects/tree/master/geo-covid" id="github-link">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" id="github-link-img"></img>
+                    Github 
+                </a>
                 <Tabs defaultActiveKey="neighbourhood-map" id="menu-manager">
                     <Tab eventKey="neighbourhood-list" title="Neighbourhood List">
                         <Reports reports={this.state.reports} />

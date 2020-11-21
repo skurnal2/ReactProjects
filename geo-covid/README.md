@@ -1,8 +1,9 @@
 # GEO COVID APP
-
 A basic react.js app that utlizies a rest api provided at Edmonton Open Data Catalogue's COVID's GEO Data. [Website](https://data.edmonton.ca/). 
 
-## Resources
+## [Checkout the app](https://geocovid.netlify.app/)
+
+### Resources
 
 This project is made using Google Maps API, React JS, React-Bootstrap
 
